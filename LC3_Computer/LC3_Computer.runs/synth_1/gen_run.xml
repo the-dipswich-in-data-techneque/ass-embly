@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1718370722">
+  <File Type="PA-TCL" Name="LC3Zybo_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="LC3Zybo_top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="LC3Zybo_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="LC3Zybo_top.vds"/>
+  <File Type="RDS-UTIL" Name="LC3Zybo_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="LC3Zybo_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="LC3Zybo_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="LC3Zybo_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="LC3Zybo_top_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/ZyboVIO_SE.edif">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/ZyboVIO_SE.edif"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/lc3.edif">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/lc3.edif"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/BtnToggle.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/BtnToggle.vhd"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/debounce.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/debounce.vhd"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/lc3_wrapper_multiplexers.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/lc3_wrapper_multiplexers.vhd"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/lc3_computer.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/lc3_computer.vhd"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/lc3_debug.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/lc3_debug.vhd"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/student_code.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/student_code.vhd"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/zybovios_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/zybovios_wrapper.vhd"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/top.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/top.vhd"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/lc3_wrapper_tristates.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/lc3_wrapper_tristates.vhd"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="LC3Zybo_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/ZyboVIO.xdc"/>
+        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
