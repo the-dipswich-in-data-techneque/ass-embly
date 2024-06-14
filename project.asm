@@ -70,7 +70,7 @@ store       st          R1      tempR1
             ld          r1      resultStart
             ld          r3      arrayStart
             not         r3      r3
-            add         r3      r3      x1  ;move (so -1 becomes first)
+            add         r3      r3      x-1  ;move (so -1 becomes first)
 storeLoop   ldr         r2      r1      x0  ;remove from space
             str         r0      r1      x0  ;store from before
             add         r0      r2      x0  ;swap new to old position
