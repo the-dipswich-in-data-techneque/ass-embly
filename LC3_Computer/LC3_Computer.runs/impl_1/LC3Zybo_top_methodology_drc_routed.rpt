@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Jun 14 15:15:44 2024
-| Host         : hjalte-x1gen6 running 64-bit major release  (build 9200)
+| Date         : Tue Jun 18 14:27:32 2024
+| Host         : dendersenLaptop running 64-bit major release  (build 9200)
 | Command      : report_methodology -file LC3Zybo_top_methodology_drc_routed.rpt -pb LC3Zybo_top_methodology_drc_routed.pb -rpx LC3Zybo_top_methodology_drc_routed.rpx
 | Design       : LC3Zybo_top
 | Device       : xc7z010clg400-1
@@ -23,12 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 231
+             Violations found: 311
 +-----------+----------+------------------------------+------------+
 | Rule      | Severity | Description                  | Violations |
 +-----------+----------+------------------------------+------------+
-| LUTAR-1   | Warning  | LUT drives async reset alert | 2          |
+| LUTAR-1   | Warning  | LUT drives async reset alert | 34         |
+| SYNTH-16  | Warning  | Address collision            | 32         |
 | TIMING-17 | Warning  | Non-clocked sequential cell  | 229        |
+| TIMING-20 | Warning  | Non-clocked latch            | 16         |
 +-----------+----------+------------------------------+------------+
 
 2. REPORT DETAILS
@@ -41,6 +43,326 @@ Related violations: <none>
 LUTAR-1#2 Warning
 LUT drives async reset alert  
 LUT cell Inst_ZyboVIOSE_wrapper/lc3_1_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/RE/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/WE/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_0/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_1/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_10/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_11/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_12/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_13/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_14/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_15/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_2/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_3/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_4/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_5/CLR, Inst_student_code/Inst_lc3_computer/lc3_m/lc3_1/data_out_6/CLR (the first 15 of 38 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[0]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[0]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#4 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[0]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[0]_C/CLR, Inst_student_code/Inst_lc3_computer/data_in_reg[0]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#5 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[10]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[10]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#6 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[10]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[10]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#7 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[11]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[11]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#8 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[11]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[11]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#9 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[12]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[12]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#10 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[12]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[12]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#11 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[13]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[13]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#12 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[13]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[13]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#13 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[14]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[14]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#14 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[14]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[14]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#15 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[15]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[15]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#16 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#17 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[1]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[1]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#18 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[1]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[1]_C/CLR, Inst_student_code/Inst_lc3_computer/data_in_reg[1]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#19 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[2]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[2]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#20 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[2]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[2]_C/CLR, Inst_student_code/Inst_lc3_computer/data_in_reg[2]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#21 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[3]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[3]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#22 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[3]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[3]_C/CLR, Inst_student_code/Inst_lc3_computer/data_in_reg[3]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#23 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[4]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[4]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#24 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[4]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[4]_C/CLR, Inst_student_code/Inst_lc3_computer/data_in_reg[4]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#25 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[5]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[5]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#26 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[5]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[5]_C/CLR, Inst_student_code/Inst_lc3_computer/data_in_reg[5]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#27 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[6]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[6]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#28 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[6]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[6]_C/CLR, Inst_student_code/Inst_lc3_computer/data_in_reg[6]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#29 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[7]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[7]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#30 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[7]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[7]_C/CLR, Inst_student_code/Inst_lc3_computer/data_in_reg[7]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#31 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[8]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[8]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#32 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[8]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[8]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#33 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[9]_LDC_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[9]_P/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#34 Warning
+LUT drives async reset alert  
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[9]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[9]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+SYNTH-16#1 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#2 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#3 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_10 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#4 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_11 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#5 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_12 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#6 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_13 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#7 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_14 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#8 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_15 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#9 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_2 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#10 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_3 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#11 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_4 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#12 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_5 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#13 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_6 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#14 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_7 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#15 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_8 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#16 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_0_9 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#17 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#18 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#19 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_10 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#20 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_11 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#21 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_12 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#22 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_13 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#23 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_14 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#24 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_15 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#25 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_2 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#26 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_3 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#27 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_4 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#28 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_5 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#29 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_6 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#30 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_7 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#31 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_8 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
+Related violations: <none>
+
+SYNTH-16#32 Warning
+Address collision  
+Block RAM Inst_student_code/Inst_lc3_computer/ram_reg_1_9 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
 Related violations: <none>
 
 TIMING-17#1 Warning
@@ -1186,6 +1508,86 @@ Related violations: <none>
 TIMING-17#229 Warning
 Non-clocked sequential cell  
 The clock pin Inst_ZyboVIOSE_wrapper/Inst_ZyboVIO_SE/gen_7seg_detect[3].Inst_sample_tick/got_edge_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[0]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[0]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[10]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[10]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[11]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[11]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[12]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[12]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[13]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[13]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[14]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[14]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[15]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[15]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[1]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[1]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[2]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[2]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[3]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[3]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[4]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[4]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[5]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[5]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[6]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[6]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[7]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[7]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[8]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[8]_LDC/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch Inst_student_code/Inst_lc3_computer/data_in_reg[9]_LDC cannot be properly analyzed as its control pin Inst_student_code/Inst_lc3_computer/data_in_reg[9]_LDC/G is not reached by a timing clock
 Related violations: <none>
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1718370722">
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1718713560">
   <File Type="BITSTR-BMM" Name="LC3Zybo_top_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="LC3Zybo_top_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="LC3Zybo_top_timing_summary_init.rpt"/>
@@ -170,8 +170,8 @@
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/ZyboVIO.xdc"/>
-        <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../LC3ZyboV2/ZyboVIO.xdc"/>
+        <Attr Name="ImportTime" Val="1718265857"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -181,9 +181,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
