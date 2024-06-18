@@ -356,7 +356,7 @@ begin
 		 data_in    => data_in,
 		 data_out   => data_out,
 		 WE         => WE,
-		 RE         => RE 
+		 RE         => RE
 		 );
    data_dbg <= data_in when RE='1' else data_out;
 	-- <<< LC3 CPU using multiplexers end of instantiation>>>	
@@ -395,5 +395,16 @@ begin
         end if;
     end process;
     data_in<=ram(to_integer(unsigned(addr_reg)));
+    
+     ram(to_integer(unsigned(IO_BTN))) <= btn;
+     ram(to_integer(unsigned(IO_SW))) <= sw;
+     ram(to_integer(unsigned(IO_PBTN))) <= pbtn;
+     ram(to_integer(unsigned(IO_PSW))) <= psw;
+     hex <= ram(to_integer(unsigned(IO_SSEG)));
+     led <= ram(to_integer(unsigned(IO_LED)));
+     pled <= ram(to_integer(unsigned(IO_PLED)));
+     
+     
+    
 end Behavioral;
 
