@@ -31,7 +31,7 @@ entity lc3_computer is
 		pled				  : out  std_logic_vector(2 downto 0);
 
 		--VIO serial
-		rx_data          : in  std_logic_vector(7 downto 0);
+      rx_data          : in  std_logic_vector(7 downto 0);
       rx_rd            : out std_logic;
       rx_empty         : in  std_logic;
       tx_data          : out std_logic_vector(7 downto 0);
@@ -234,17 +234,51 @@ begin
             if(address >= x"e000" and clk'event and clk = '1') then
                 case address is
                 when IO_SW =>
+                if (RE = '1') then
                     data_in(7 downto 0) <= sw;
                     data_in(15 downto 8) <= x"00";
+                end if;
                 when IO_BTN =>
+                 if (RE = '1') then
                     data_in(4 downto 0) <= btn;
                     data_in(15 downto 5) <= "00000000000";
+                end if;
                 when IO_SSEG =>
+                 if (WE = '1') then
                     hex <= data_out;
-                when IO_LED =>
-                    led <= data_out(7 downto 0);
-                when others =>
+                end if;
+                if(RE = '1') then
                     data_in <= x"0000";
+                end if;
+                when IO_LED =>
+                 if (WE = '1') then
+                    led <= data_out(7 downto 0);
+                end if;
+                if(RE = '1') then
+                    data_in <= x"0000";
+                end if;
+                when STDIN_S =>
+                 if (RE = '1') then
+                    data_in(15) <= not rx_empty;
+                    data_in(14 downto 0) <= "000000000000000";
+                end if;
+                when STDIN_D =>
+                    if(RE = '1') then
+                        data_in <= rx_data;
+                    end if;
+                when STDOUT_S =>
+                 if (RE = '1') then
+                    data_in(15) <= not tx_full;
+                    data_in(14 downto 0) <= "000000000000000";
+                end if;
+                when STDOUT_D =>
+                if(WE = '1') then
+                    tx_data <= data_out;
+                end if;
+                when others =>
+                if(RE = '1') then
+                    data_in <= x"0000";
+                end if;
                 end case;
             end if;
             if (addr_reg < x"e000" and address < x"e000") then
