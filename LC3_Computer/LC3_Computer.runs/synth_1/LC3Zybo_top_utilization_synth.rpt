@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Tue Jun 18 14:26:29 2024
+| Date         : Thu Jun 20 10:50:31 2024
 | Host         : dendersenLaptop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LC3Zybo_top_utilization_synth.rpt -pb LC3Zybo_top_utilization_synth.pb
 | Design       : LC3Zybo_top
@@ -35,8 +35,8 @@ Table of Contents
 |   LUT as Memory            |   54 |     0 |      6000 |  0.90 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   54 |     0 |           |       |
-| Slice Registers            | 1972 |     0 |     35200 |  5.60 |
-|   Register as Flip Flop    | 1956 |     0 |     35200 |  5.56 |
+| Slice Registers            | 1973 |     0 |     35200 |  5.61 |
+|   Register as Flip Flop    | 1957 |     0 |     35200 |  5.56 |
 |   Register as Latch        |   16 |     0 |     35200 |  0.05 |
 | F7 Muxes                   |  107 |     0 |      8800 |  1.22 |
 | F8 Muxes                   |   16 |     0 |      4400 |  0.36 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 20    |          Yes |           - |          Set |
-| 364   |          Yes |           - |        Reset |
+| 365   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 1588  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -151,13 +151,13 @@ Table of Contents
 |  Ref Name | Used |  Functional Category |
 +-----------+------+----------------------+
 | FDRE      | 1588 |         Flop & Latch |
-| LUT6      | 1097 |                  LUT |
-| LUT5      |  910 |                  LUT |
-| LUT3      |  496 |                  LUT |
+| LUT6      | 1095 |                  LUT |
+| LUT5      |  879 |                  LUT |
+| LUT3      |  503 |                  LUT |
 | LUT1      |  365 |                  LUT |
-| FDCE      |  348 |         Flop & Latch |
-| LUT4      |  251 |                  LUT |
-| LUT2      |  211 |                  LUT |
+| FDCE      |  349 |         Flop & Latch |
+| LUT4      |  248 |                  LUT |
+| LUT2      |  243 |                  LUT |
 | CARRY4    |  209 |           CarryLogic |
 | MUXF7     |  107 |                MuxFx |
 | SRLC16E   |   54 |   Distributed Memory |

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Tue Jun 18 14:27:30 2024
+| Date         : Thu Jun 20 10:51:33 2024
 | Host         : dendersenLaptop running 64-bit major release  (build 9200)
 | Command      : report_drc -file LC3Zybo_top_drc_routed.rpt -pb LC3Zybo_top_drc_routed.pb -rpx LC3Zybo_top_drc_routed.rpx
 | Design       : LC3Zybo_top
@@ -121,7 +121,7 @@ Related violations: <none>
 
 PDRC-153#12 Warning
 Gated clock check  
-Net Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[5]_P is a gated clock net sourced by a combinational pin Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[5]_LDC_i_1/O, cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[5]_P_1 is a gated clock net sourced by a combinational pin Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[5]_LDC_i_1/O, cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#13 Warning

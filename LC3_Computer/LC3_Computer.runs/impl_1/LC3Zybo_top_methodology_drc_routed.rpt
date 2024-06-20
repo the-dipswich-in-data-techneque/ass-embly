@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Tue Jun 18 14:27:32 2024
+| Date         : Thu Jun 20 10:51:35 2024
 | Host         : dendersenLaptop running 64-bit major release  (build 9200)
 | Command      : report_methodology -file LC3Zybo_top_methodology_drc_routed.rpt -pb LC3Zybo_top_methodology_drc_routed.pb -rpx LC3Zybo_top_methodology_drc_routed.rpx
 | Design       : LC3Zybo_top
@@ -112,7 +112,7 @@ Related violations: <none>
 
 LUTAR-1#16 Warning
 LUT drives async reset alert  
-LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell Inst_student_code/Inst_lc3_computer/lc3_m/data_in_reg[15]_LDC_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) Inst_student_code/Inst_lc3_computer/data_in_reg[15]_C/CLR, Inst_student_code/Inst_lc3_computer/data_in_reg[15]_LDC/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#17 Warning

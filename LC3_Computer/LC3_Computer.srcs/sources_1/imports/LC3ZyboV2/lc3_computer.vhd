@@ -264,7 +264,8 @@ begin
                 end if;
                 when STDIN_D =>
                     if(RE = '1') then
-                        data_in <= rx_data;
+                        data_in(7 downto 0) <= rx_data;
+                        data_in(15 downto 8) <= x"00";
                     end if;
                 when STDOUT_S =>
                  if (RE = '1') then
@@ -273,7 +274,7 @@ begin
                 end if;
                 when STDOUT_D =>
                 if(WE = '1') then
-                    tx_data <= data_out;
+                    tx_data <= data_out(7 downto 0);
                 end if;
                 when others =>
                 if(RE = '1') then
