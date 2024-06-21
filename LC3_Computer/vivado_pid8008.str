@@ -570,3 +570,4 @@ selectCodeEditor("lc3_computer.vhd", 267, 176); // ce (w, ck)
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED

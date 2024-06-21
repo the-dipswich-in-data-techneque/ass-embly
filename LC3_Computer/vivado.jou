@@ -11,3 +11,4 @@
 #-----------------------------------------------------------
 start_gui
 open_project C:/3_ugers_projekt/LC3_Computer/LC3_Computer.xpr
+update_compile_order -fileset sources_1

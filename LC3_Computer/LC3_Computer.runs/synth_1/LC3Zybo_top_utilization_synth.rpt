@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Thu Jun 20 10:50:31 2024
-| Host         : dendersenLaptop running 64-bit major release  (build 9200)
+| Date         : Fri Jun 21 14:33:33 2024
+| Host         : hjalte-x1gen6 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LC3Zybo_top_utilization_synth.rpt -pb LC3Zybo_top_utilization_synth.pb
 | Design       : LC3Zybo_top
 | Device       : 7z010clg400-1
@@ -30,14 +30,14 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 3341 |     0 |     17600 | 18.98 |
-|   LUT as Logic             | 3287 |     0 |     17600 | 18.68 |
+| Slice LUTs*                | 3294 |     0 |     17600 | 18.72 |
+|   LUT as Logic             | 3240 |     0 |     17600 | 18.41 |
 |   LUT as Memory            |   54 |     0 |      6000 |  0.90 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   54 |     0 |           |       |
-| Slice Registers            | 1973 |     0 |     35200 |  5.61 |
-|   Register as Flip Flop    | 1957 |     0 |     35200 |  5.56 |
-|   Register as Latch        |   16 |     0 |     35200 |  0.05 |
+| Slice Registers            | 1959 |     0 |     35200 |  5.57 |
+|   Register as Flip Flop    | 1959 |     0 |     35200 |  5.57 |
+|   Register as Latch        |    0 |     0 |     35200 |  0.00 |
 | F7 Muxes                   |  107 |     0 |      8800 |  1.22 |
 | F8 Muxes                   |   16 |     0 |      4400 |  0.36 |
 +----------------------------+------+-------+-----------+-------+
@@ -56,10 +56,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 20    |          Yes |           - |          Set |
-| 365   |          Yes |           - |        Reset |
+| 4     |          Yes |           - |          Set |
+| 340   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 1588  |          Yes |       Reset |            - |
+| 1615  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -150,24 +150,23 @@ Table of Contents
 +-----------+------+----------------------+
 |  Ref Name | Used |  Functional Category |
 +-----------+------+----------------------+
-| FDRE      | 1588 |         Flop & Latch |
-| LUT6      | 1095 |                  LUT |
-| LUT5      |  879 |                  LUT |
-| LUT3      |  503 |                  LUT |
+| FDRE      | 1615 |         Flop & Latch |
+| LUT6      | 1120 |                  LUT |
+| LUT5      |  905 |                  LUT |
+| LUT3      |  409 |                  LUT |
 | LUT1      |  365 |                  LUT |
-| FDCE      |  349 |         Flop & Latch |
-| LUT4      |  248 |                  LUT |
-| LUT2      |  243 |                  LUT |
+| FDCE      |  340 |         Flop & Latch |
+| LUT4      |  266 |                  LUT |
+| LUT2      |  209 |                  LUT |
 | CARRY4    |  209 |           CarryLogic |
 | MUXF7     |  107 |                MuxFx |
 | SRLC16E   |   54 |   Distributed Memory |
 | RAMB36E1  |   32 |         Block Memory |
-| FDPE      |   20 |         Flop & Latch |
 | MUXF8     |   16 |                MuxFx |
-| LDCE      |   16 |         Flop & Latch |
 | IBUF      |    9 |                   IO |
 | BUFG      |    6 |                Clock |
 | OBUF      |    4 |                   IO |
+| FDPE      |    4 |         Flop & Latch |
 | BSCANE2   |    2 |               Others |
 | PS7       |    1 | Specialized Resource |
 | PLLE2_ADV |    1 |                Clock |
