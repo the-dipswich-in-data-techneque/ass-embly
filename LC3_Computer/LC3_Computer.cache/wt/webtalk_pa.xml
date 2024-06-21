@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Fri Jun 21 14:32:41 2024">
+<application name="pa" timeStamp="Fri Jun 21 14:39:37 2024">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="0b39081f256f4ded9d40dbce7f790e48" type="ProjectID"/>
 <property name="ProjectIteration" value="41" type="ProjectIteration"/>
@@ -32,7 +32,7 @@ This means code written to parse this file will need to be revisited each subseq
 <item name="Gui Handlers">
 <property name="AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN" value="1" type="GuiHandlerData"/>
 <property name="AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES" value="3" type="GuiHandlerData"/>
-<property name="BaseDialog_CANCEL" value="16" type="GuiHandlerData"/>
+<property name="BaseDialog_CANCEL" value="17" type="GuiHandlerData"/>
 <property name="BaseDialog_CLOSE" value="7" type="GuiHandlerData"/>
 <property name="BaseDialog_NO" value="1" type="GuiHandlerData"/>
 <property name="BaseDialog_OK" value="76" type="GuiHandlerData"/>
@@ -43,7 +43,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="CreateSrcFileDialog_FILE_NAME" value="1" type="GuiHandlerData"/>
 <property name="CreateSrcFileDialog_FILE_TYPE" value="1" type="GuiHandlerData"/>
 <property name="DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS" value="1" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="133" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="137" type="GuiHandlerData"/>
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="16" type="GuiHandlerData"/>
 <property name="HCodeEditor_CLOSE" value="1" type="GuiHandlerData"/>
 <property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="3" type="GuiHandlerData"/>
@@ -86,7 +86,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SyntheticaStateMonitor_CANCEL" value="9" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="20" type="GuiMode"/>
+<property name="GuiMode" value="21" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
 <property name="TclMode" value="13" type="TclMode"/>
 </item>
