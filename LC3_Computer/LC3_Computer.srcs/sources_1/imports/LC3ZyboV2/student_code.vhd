@@ -32,7 +32,12 @@ entity student_code is
            rx_empty : in std_logic;
            tx_data : out std_logic_vector(7 downto 0);
            tx_wr : out std_logic;
-           tx_full : in std_logic);
+           tx_full : in std_logic;
+           
+           tx_p: out std_logic;
+           rx_p: in std_logic
+           );
+
 end student_code;
 
 architecture Behavioral of student_code is
@@ -89,7 +94,10 @@ begin
 		address_dbg => address,
 		data_dbg => data,
 		RE_dbg => RE,
-		WE_dbg => WE
+		WE_dbg => WE,
+		
+		tx_p => tx_p,
+		rx_p => rx_p
 	);
 	
 	--Instance of the debuging module for the LC3 computer

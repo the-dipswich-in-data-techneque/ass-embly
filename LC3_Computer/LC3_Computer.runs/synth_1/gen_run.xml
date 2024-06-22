@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1718973161">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1718982094">
   <File Type="PA-TCL" Name="LC3Zybo_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="LC3Zybo_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="LC3Zybo_top_reports.tcl"/>
@@ -51,6 +51,46 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/ch04/list_ch04_11_mod_m.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../fpga_vhdl_src/fpga_vhdl_src/ch04/list_ch04_11_mod_m.vhd"/>
+        <Attr Name="ImportTime" Val="1718978125"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ch07/list_ch07_01_uart_rx.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../fpga_vhdl_src/fpga_vhdl_src/ch07/list_ch07_01_uart_rx.vhd"/>
+        <Attr Name="ImportTime" Val="1718978126"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ch04/list_ch04_20_fifo.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../fpga_vhdl_src/fpga_vhdl_src/ch04/list_ch04_20_fifo.vhd"/>
+        <Attr Name="ImportTime" Val="1718978125"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ch07/list_ch07_03_uart_tx.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../fpga_vhdl_src/fpga_vhdl_src/ch07/list_ch07_03_uart_tx.vhd"/>
+        <Attr Name="ImportTime" Val="1718978126"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ch07/list_ch07_04_uart.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../fpga_vhdl_src/fpga_vhdl_src/ch07/list_ch07_04_uart.vhd"/>
+        <Attr Name="ImportTime" Val="1718978126"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/LC3ZyboV2/lc3_computer.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/lc3_computer.vhd"/>
@@ -96,6 +136,15 @@
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../LC3ZyboV2/lc3_wrapper_tristates.vhd"/>
         <Attr Name="ImportTime" Val="1718021699"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ch07/list_ch07_02_flag.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../fpga_vhdl_src/fpga_vhdl_src/ch07/list_ch07_02_flag.vhd"/>
+        <Attr Name="ImportTime" Val="1718978126"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
