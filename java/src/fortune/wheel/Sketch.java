@@ -58,4 +58,15 @@ public class Sketch extends PApplet {
     }
     return slots;
   }
+  public void mouseClicked() {
+    Button.click(this);
+  }
+  public enum state{
+    start,
+    wheelPick,
+    wheelSpin,
+    lastRolls,
+    bank,
+    end,
+  }
 }
