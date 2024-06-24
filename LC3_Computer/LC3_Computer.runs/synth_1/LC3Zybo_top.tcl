@@ -33,6 +33,11 @@ read_vhdl -library xil_defaultlib {
   C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/BtnToggle.vhd
   C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/debounce.vhd
   C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_wrapper_multiplexers.vhd
+  C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch04/list_ch04_11_mod_m.vhd
+  C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch07/list_ch07_01_uart_rx.vhd
+  C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch04/list_ch04_20_fifo.vhd
+  C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch07/list_ch07_03_uart_tx.vhd
+  C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch07/list_ch07_04_uart.vhd
   C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd
   C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_debug.vhd
   C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/student_code.vhd

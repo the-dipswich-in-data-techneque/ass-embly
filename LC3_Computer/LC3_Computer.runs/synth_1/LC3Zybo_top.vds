@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Jun 21 14:32:43 2024
-# Process ID: 6628
+# Start of session at: Fri Jun 21 17:01:36 2024
+# Process ID: 3016
 # Current directory: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1
 # Command line: vivado.exe -log LC3Zybo_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LC3Zybo_top.tcl
 # Log file: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/LC3Zybo_top.vds
@@ -15,30 +15,53 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11068 
+INFO: Helper process launched with PID 15596 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 365.867 ; gain = 97.086
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 365.773 ; gain = 97.621
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'LC3Zybo_top' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/top.vhd:26]
-INFO: [Synth 8-638] synthesizing module 'student_code' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/student_code.vhd:38]
-INFO: [Synth 8-638] synthesizing module 'lc3_computer' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:56]
+INFO: [Synth 8-638] synthesizing module 'LC3Zybo_top' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/top.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'student_code' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/student_code.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'lc3_computer' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:61]
 INFO: [Synth 8-638] synthesizing module 'lc3_wrapper_multiplexers' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_wrapper_multiplexers.vhd:24]
 INFO: [Synth 8-637] synthesizing blackbox instance 'lc3_1' of component 'lc3' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_wrapper_multiplexers.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'lc3_wrapper_multiplexers' (1#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_wrapper_multiplexers.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'lc3_computer' (2#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:56]
+INFO: [Synth 8-638] synthesizing module 'uart' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch07/list_ch07_04_uart.vhd:29]
+	Parameter DBIT bound to: 8 - type: integer 
+	Parameter SB_TICK bound to: 16 - type: integer 
+	Parameter DVSR bound to: 163 - type: integer 
+	Parameter DVSR_BIT bound to: 8 - type: integer 
+	Parameter FIFO_W bound to: 2 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mod_m_counter' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch04/list_ch04_11_mod_m.vhd:17]
+	Parameter N bound to: 8 - type: integer 
+	Parameter M bound to: 163 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mod_m_counter' (2#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch04/list_ch04_11_mod_m.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'uart_rx' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch07/list_ch07_01_uart_rx.vhd:19]
+	Parameter DBIT bound to: 8 - type: integer 
+	Parameter SB_TICK bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'uart_rx' (3#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch07/list_ch07_01_uart_rx.vhd:19]
+INFO: [Synth 8-638] synthesizing module 'fifo' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch04/list_ch04_20_fifo.vhd:19]
+	Parameter B bound to: 8 - type: integer 
+	Parameter W bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fifo' (4#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch04/list_ch04_20_fifo.vhd:19]
+INFO: [Synth 8-638] synthesizing module 'uart_tx' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch07/list_ch07_03_uart_tx.vhd:20]
+	Parameter DBIT bound to: 8 - type: integer 
+	Parameter SB_TICK bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'uart_tx' (5#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch07/list_ch07_03_uart_tx.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'uart' (6#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/ch07/list_ch07_04_uart.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'lc3_computer' (7#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:61]
 INFO: [Synth 8-638] synthesizing module 'lc3_debug' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_debug.vhd:29]
 INFO: [Synth 8-638] synthesizing module 'BtnToggle' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/BtnToggle.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'BtnToggle' (3#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/BtnToggle.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'BtnToggle' (8#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/BtnToggle.vhd:24]
 INFO: [Synth 8-638] synthesizing module 'debounce' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/debounce.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'debounce' (4#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/debounce.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'lc3_debug' (5#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_debug.vhd:29]
-INFO: [Synth 8-256] done synthesizing module 'student_code' (6#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/student_code.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'debounce' (9#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/debounce.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'lc3_debug' (10#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_debug.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'student_code' (11#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/student_code.vhd:43]
 INFO: [Synth 8-638] synthesizing module 'zyboviose_wrapper' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/zybovios_wrapper.vhd:32]
 INFO: [Synth 8-637] synthesizing blackbox instance 'Inst_ZyboVIO_SE' of component 'ZyboVIO_SE' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/zybovios_wrapper.vhd:58]
-INFO: [Synth 8-256] done synthesizing module 'zyboviose_wrapper' (7#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/zybovios_wrapper.vhd:32]
-INFO: [Synth 8-256] done synthesizing module 'LC3Zybo_top' (8#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/top.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'zyboviose_wrapper' (12#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/zybovios_wrapper.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'LC3Zybo_top' (13#1) [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/top.vhd:28]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 455.695 ; gain = 186.914
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 456.309 ; gain = 188.156
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -51,10 +74,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 455.695 ; gain = 186.914
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 456.309 ; gain = 188.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 455.695 ; gain = 186.914
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 456.309 ; gain = 188.156
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -62,10 +85,7 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc]
-WARNING: [Vivado 12-584] No ports matched 'tx_rd'. [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc:32]
-WARNING: [Vivado 12-584] No ports matched 'rx_rd'. [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc:33]
 Finished Parsing XDC File [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/LC3Zybo_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/LC3Zybo_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/LC3Zybo_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
@@ -73,33 +93,66 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 776.656 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 778.609 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 776.656 ; gain = 507.875
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 778.609 ; gain = 510.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 776.656 ; gain = 507.875
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 778.609 ; gain = 510.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 776.656 ; gain = 507.875
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 778.609 ; gain = 510.457
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "max_tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'uart_rx'
+INFO: [Synth 8-5544] ROM "rx_done_tick" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_next" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "n_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "array_reg_reg[3]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "array_reg_reg[2]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "array_reg_reg[1]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "array_reg_reg[0]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'uart_tx'
+INFO: [Synth 8-5544] ROM "tx_done_tick" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_next" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "n_next" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "ram" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "hex" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "led" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "pled" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tx_data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'debounce'
 INFO: [Synth 8-5546] ROM "tick" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "output" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+                   start |                               01 |                               01
+                    data |                               10 |                               10
+                    stop |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+                   start |                               01 |                               01
+                    data |                               10 |                               10
+                    stop |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'uart_tx'
 INFO: [Synth 8-6430] The Block RAM ram_reg may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -111,7 +164,7 @@ INFO: [Synth 8-6430] The Block RAM ram_reg may get memory collision error if rea
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'debounce'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 776.656 ; gain = 507.875
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 778.609 ; gain = 510.457
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -126,27 +179,36 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     30 Bit       Adders := 1     
 	   2 Input     21 Bit       Adders := 10    
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 4     
 +---Registers : 
 	               30 Bit    Registers := 1     
 	               21 Bit    Registers := 10    
 	               16 Bit    Registers := 3     
-	                8 Bit    Registers := 2     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
+	                8 Bit    Registers := 12    
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 7     
 +---RAMs : 
 	            1024K Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     21 Bit        Muxes := 40    
 	   4 Input     21 Bit        Muxes := 10    
-	   8 Input     16 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 3     
 	   2 Input      5 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 10    
-	   2 Input      2 Bit        Muxes := 30    
-	   2 Input      1 Bit        Muxes := 36    
-	   5 Input      1 Bit        Muxes := 5     
-	   4 Input      1 Bit        Muxes := 20    
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 12    
+	   2 Input      2 Bit        Muxes := 32    
+	   2 Input      1 Bit        Muxes := 49    
+	   3 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 47    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -154,19 +216,77 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module mod_m_counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module uart_rx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 5     
+Module fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 4     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 4     
+Module uart_tx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 6     
 Module lc3_computer 
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 3     
-	                8 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
 +---RAMs : 
 	            1024K Bit         RAMs := 1     
 +---Muxes : 
-	   8 Input     16 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 5     
-	   5 Input      1 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 4     
 Module BtnToggle 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -212,6 +332,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "Inst_lc3_computer/uart_unit/baud_gen_unit/max_tick" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "lc3_debug_1/sys_halt_db/tick" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "lc3_debug_1/hand_clk_db/tick" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "tick" won't be mapped to RAM because it is too sparse
@@ -223,46 +344,8 @@ INFO: [Synth 8-5546] ROM "tick" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "tick" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "tick" won't be mapped to RAM because it is too sparse
 RAM Pipeline Warning: Read Address Register Found For RAM Inst_student_code/Inst_lc3_computer/ram_reg. We will not be able to pipeline it. This may degrade performance. 
-CRITICAL WARNING: [Synth 8-3352] multi-driven net rx_rd with 1st driver pin 'Inst_student_code/Inst_lc3_computer/rx_rd0_inferred/rx_rd_reg' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:389]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net rx_rd with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:389]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net rx_rd is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:389]
-WARNING: [Synth 8-3332] Sequential element (Inst_student_code/Inst_lc3_computer/tx_data_reg[7]) is unused and will be removed from module LC3Zybo_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[7] with 1st driver pin 'Inst_student_code/Inst_lc3_computer/tx_data_reg[7]/Q' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[7] with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net tx_data[7] is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-WARNING: [Synth 8-3332] Sequential element (Inst_student_code/Inst_lc3_computer/tx_data_reg[6]) is unused and will be removed from module LC3Zybo_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[6] with 1st driver pin 'Inst_student_code/Inst_lc3_computer/tx_data_reg[6]/Q' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[6] with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net tx_data[6] is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-WARNING: [Synth 8-3332] Sequential element (Inst_student_code/Inst_lc3_computer/tx_data_reg[5]) is unused and will be removed from module LC3Zybo_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[5] with 1st driver pin 'Inst_student_code/Inst_lc3_computer/tx_data_reg[5]/Q' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[5] with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net tx_data[5] is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-WARNING: [Synth 8-3332] Sequential element (Inst_student_code/Inst_lc3_computer/tx_data_reg[4]) is unused and will be removed from module LC3Zybo_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[4] with 1st driver pin 'Inst_student_code/Inst_lc3_computer/tx_data_reg[4]/Q' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[4] with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net tx_data[4] is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-WARNING: [Synth 8-3332] Sequential element (Inst_student_code/Inst_lc3_computer/tx_data_reg[3]) is unused and will be removed from module LC3Zybo_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[3] with 1st driver pin 'Inst_student_code/Inst_lc3_computer/tx_data_reg[3]/Q' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[3] with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net tx_data[3] is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-WARNING: [Synth 8-3332] Sequential element (Inst_student_code/Inst_lc3_computer/tx_data_reg[2]) is unused and will be removed from module LC3Zybo_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[2] with 1st driver pin 'Inst_student_code/Inst_lc3_computer/tx_data_reg[2]/Q' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[2] with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net tx_data[2] is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-WARNING: [Synth 8-3332] Sequential element (Inst_student_code/Inst_lc3_computer/tx_data_reg[1]) is unused and will be removed from module LC3Zybo_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[1] with 1st driver pin 'Inst_student_code/Inst_lc3_computer/tx_data_reg[1]/Q' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[1] with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net tx_data[1] is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-WARNING: [Synth 8-3332] Sequential element (Inst_student_code/Inst_lc3_computer/tx_data_reg[0]) is unused and will be removed from module LC3Zybo_top.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[0] with 1st driver pin 'Inst_student_code/Inst_lc3_computer/tx_data_reg[0]/Q' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_data[0] with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net tx_data[0] is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:317]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_wr with 1st driver pin 'Inst_student_code/Inst_lc3_computer/tx_wr0_inferred/tx_wr_reg' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:391]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net tx_wr with 2nd driver pin 'GND' [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:391]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net tx_wr is connected to constant driver, other driver is ignored [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3_computer.vhd:391]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 776.656 ; gain = 507.875
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 778.609 ; gain = 510.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -279,22 +362,22 @@ Note: The tale above is a preliminary report that shows the Block RAMs at the cu
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_14 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_1/Inst_student_code/Inst_lc3_computer/ram_reg_1_15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_14 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_0/Inst_student_code/Inst_lc3_computer/ram_reg_1_15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -305,13 +388,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 793.391 ; gain = 524.609
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 794.660 ; gain = 526.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 794.355 ; gain = 525.574
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 796.047 ; gain = 527.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -353,7 +436,7 @@ INFO: [Synth 8-4480] The timing for the instance Inst_student_code/Inst_lc3_comp
 INFO: [Synth 8-4480] The timing for the instance Inst_student_code/Inst_lc3_computer/ram_reg_1_14 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance Inst_student_code/Inst_lc3_computer/ram_reg_1_15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 810.387 ; gain = 541.605
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 836.656 ; gain = 568.504
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -373,13 +456,13 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6064] Net n_0_622 is driving 64 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
-INFO: [Synth 8-6064] Net n_0_20 is driving 64 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+INFO: [Synth 8-6064] Net n_0_708 is driving 64 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+INFO: [Synth 8-6064] Net n_0_364 is driving 64 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 810.387 ; gain = 541.605
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 836.656 ; gain = 568.504
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -392,7 +475,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 810.387 ; gain = 541.605
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 836.656 ; gain = 568.504
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -404,25 +487,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 810.387 ; gain = 541.605
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 836.656 ; gain = 568.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 810.387 ; gain = 541.605
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 836.656 ; gain = 568.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 810.387 ; gain = 541.605
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 836.656 ; gain = 568.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 810.387 ; gain = 541.605
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 836.656 ; gain = 568.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -444,11 +527,11 @@ Report Cell Usage:
 |2     |lc3_bbox_0        |     1|
 |3     |CARRY4            |    58|
 |4     |LUT1              |   201|
-|5     |LUT2              |    22|
-|6     |LUT3              |    12|
-|7     |LUT4              |    37|
-|8     |LUT5              |   213|
-|9     |LUT6              |   155|
+|5     |LUT2              |    13|
+|6     |LUT3              |    38|
+|7     |LUT4              |    99|
+|8     |LUT5              |   241|
+|9     |LUT6              |   150|
 |10    |RAMB36E1          |     1|
 |11    |RAMB36E1_1        |    16|
 |12    |RAMB36E1_10       |     1|
@@ -456,56 +539,65 @@ Report Cell Usage:
 |14    |RAMB36E1_12       |     1|
 |15    |RAMB36E1_13       |     1|
 |16    |RAMB36E1_14       |     1|
-|17    |RAMB36E1_2        |     1|
-|18    |RAMB36E1_3        |     1|
-|19    |RAMB36E1_4        |     1|
-|20    |RAMB36E1_5        |     1|
-|21    |RAMB36E1_6        |     3|
-|22    |RAMB36E1_7        |     1|
-|23    |RAMB36E1_8        |     1|
-|24    |RAMB36E1_9        |     1|
-|25    |FDCE              |    30|
-|26    |FDRE              |   275|
-|27    |IBUF              |     9|
-|28    |OBUF              |     4|
+|17    |RAMB36E1_15       |     1|
+|18    |RAMB36E1_16       |     1|
+|19    |RAMB36E1_2        |     1|
+|20    |RAMB36E1_3        |     1|
+|21    |RAMB36E1_4        |     1|
+|22    |RAMB36E1_5        |     1|
+|23    |RAMB36E1_6        |     1|
+|24    |RAMB36E1_7        |     1|
+|25    |RAMB36E1_8        |     1|
+|26    |RAMB36E1_9        |     1|
+|27    |FDCE              |   146|
+|28    |FDPE              |     3|
+|29    |FDRE              |   275|
+|30    |IBUF              |    10|
+|31    |OBUF              |     5|
 +------+------------------+------+
 
 Report Instance Areas: 
 +------+----------------------------------+-------------------------+------+
 |      |Instance                          |Module                   |Cells |
 +------+----------------------------------+-------------------------+------+
-|1     |top                               |                         |  1107|
+|1     |top                               |                         |  1330|
 |2     |  Inst_ZyboVIOSE_wrapper          |zyboviose_wrapper        |    35|
-|3     |  Inst_student_code               |student_code             |   434|
-|4     |    Inst_lc3_computer             |lc3_computer             |   208|
-|5     |      lc3_m                       |lc3_wrapper_multiplexers |   131|
-|6     |    lc3_debug_1                   |lc3_debug                |   226|
-|7     |      BtnToggle_1                 |BtnToggle                |    62|
-|8     |      hand_clk_db                 |debounce_7               |    82|
-|9     |      sys_halt_db                 |debounce_8               |    80|
-|10    |  \my_debounce[0].Inst_debounce1  |debounce                 |    79|
-|11    |  \my_debounce[0].Inst_debounce2  |debounce_0               |    78|
-|12    |  \my_debounce[1].Inst_debounce1  |debounce_1               |    78|
-|13    |  \my_debounce[1].Inst_debounce2  |debounce_2               |    78|
-|14    |  \my_debounce[2].Inst_debounce1  |debounce_3               |    79|
-|15    |  \my_debounce[2].Inst_debounce2  |debounce_4               |    77|
-|16    |  \my_debounce[3].Inst_debounce1  |debounce_5               |    79|
-|17    |  \my_debounce[3].Inst_debounce2  |debounce_6               |    77|
+|3     |  Inst_student_code               |student_code             |   651|
+|4     |    Inst_lc3_computer             |lc3_computer             |   432|
+|5     |      lc3_m                       |lc3_wrapper_multiplexers |    93|
+|6     |      uart_unit                   |uart                     |   244|
+|7     |        baud_gen_unit             |mod_m_counter            |    22|
+|8     |        fifo_rx_unit              |fifo                     |    77|
+|9     |        fifo_tx_unit              |fifo_9                   |    59|
+|10    |        uart_rx_unit              |uart_rx                  |    41|
+|11    |        uart_tx_unit              |uart_tx                  |    45|
+|12    |    lc3_debug_1                   |lc3_debug                |   219|
+|13    |      BtnToggle_1                 |BtnToggle                |    58|
+|14    |      hand_clk_db                 |debounce_7               |    79|
+|15    |      sys_halt_db                 |debounce_8               |    79|
+|16    |  \my_debounce[0].Inst_debounce1  |debounce                 |    78|
+|17    |  \my_debounce[0].Inst_debounce2  |debounce_0               |    79|
+|18    |  \my_debounce[1].Inst_debounce1  |debounce_1               |    78|
+|19    |  \my_debounce[1].Inst_debounce2  |debounce_2               |    79|
+|20    |  \my_debounce[2].Inst_debounce1  |debounce_3               |    78|
+|21    |  \my_debounce[2].Inst_debounce2  |debounce_4               |    79|
+|22    |  \my_debounce[3].Inst_debounce1  |debounce_5               |    78|
+|23    |  \my_debounce[3].Inst_debounce2  |debounce_6               |    80|
 +------+----------------------------------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 810.387 ; gain = 541.605
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 836.656 ; gain = 568.504
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 30 critical warnings and 8 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 810.387 ; gain = 220.645
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 810.387 ; gain = 541.605
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 836.656 ; gain = 246.203
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:36 . Memory (MB): peak = 836.656 ; gain = 568.504
 INFO: [Project 1-571] Translating synthesized netlist
 Parsing EDIF File [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/ZyboVIO_SE.edif]
 Finished Parsing EDIF File [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/ZyboVIO_SE.edif]
 WARNING: [Netlist 29-5] Replacement cell view : ZyboVIO_SE has additional ports (tx_data_out_aa[0]) not seen in its original version.
 Parsing EDIF File [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3.edif]
 Finished Parsing EDIF File [C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3.edif]
-INFO: [Netlist 29-17] Analyzing 2771 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-17] Analyzing 2772 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-479] Netlist was created with Xilinx ngc2edif P_INT.20180321
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -520,11 +612,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   MULT_AND => LUT2: 17 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-87 Infos, 12 Warnings, 30 Critical Warnings and 0 Errors encountered.
+115 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 826.996 ; gain = 570.496
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:40 . Memory (MB): peak = 836.656 ; gain = 580.852
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/LC3Zybo_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file LC3Zybo_top_utilization_synth.rpt -pb LC3Zybo_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 826.996 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 21 14:33:33 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 836.656 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 21 17:02:22 2024...

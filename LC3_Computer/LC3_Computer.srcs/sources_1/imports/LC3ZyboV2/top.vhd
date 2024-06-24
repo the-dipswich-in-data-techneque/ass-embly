@@ -19,7 +19,9 @@ entity LC3Zybo_top is
       blinky : out std_logic;
       pbtn : in std_logic_vector(3 downto 0);
       psw : in std_logic_vector(3 downto 0);
-      pled : out std_logic_vector(2 downto 0)
+      pled : out std_logic_vector(2 downto 0);
+      rx_p: in std_logic;
+      tx_p: out std_logic
   );
 end LC3Zybo_top;
 
@@ -78,8 +80,10 @@ begin
       rx_empty => rx_empty,
       tx_data => tx_data,
       tx_wr => tx_wr,
-      tx_full => tx_full
-		
+      tx_full => tx_full,
+        
+      rx_p => rx_p,
+      tx_p => tx_p
 	);
 
 	--Here we instantiate the component that allows us to connect to the 
