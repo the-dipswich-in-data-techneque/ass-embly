@@ -12,7 +12,7 @@ public class UART{
         SerialPort[] ports = SerialPort.getCommPorts();
         port = ports[0];
         for (int i = 0; i < ports.length; i++) {
-            if(ports[i].getSystemPortName().contains("USB to UART Bridge")){
+            if(ports[i].getSystemPortName().contains("UART") || ports[i].getSystemPortName().contains("Feather")){
                 port = ports[i];
                 break;
             }
