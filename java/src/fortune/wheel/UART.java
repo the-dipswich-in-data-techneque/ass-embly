@@ -32,10 +32,10 @@ public class UART{
     }
 
     public void UART_sender() {
-
         if (port.openPort()) {
             byte[] writeBuffer;
             String dataToSend;
+
             // Send data
             if(!messageQueue.isEmpty()){
                 dataToSend = messageQueue.poll() + "\n";
@@ -52,11 +52,10 @@ public class UART{
             int bytesRead = 0;
             StringBuilder receivedData = new StringBuilder();
 
-            long startTime = System.currentTimeMillis();
-            long timeout = 5000; // 5 seconds timeout
+            long timeout = System.currentTimeMillis() + 5000; // 5 seconds timeout
 
             try {
-                while(System.currentTimeMillis() - startTime < timeout){
+                while(System.currentTimeMillis() < timeout){
                     if(port.bytesAvailable() > 0){
                         bytesRead = port.readBytes(readBuffer, Math.min(port.bytesAvailable(), readBuffer.length));
                         receivedData.append(new String(readBuffer, 0, bytesRead));
