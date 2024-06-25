@@ -111,11 +111,10 @@ roll        st          r7      storeR7 ;sub routine
             not         r4      r4
             add         r4      r4      x1
             ld          r0      pbtn
-            and         r0      r0      x8
+            add         r0      r0      x0
             brz         x-3
-            add         r0      r0      x-9 ;tell java to spin wheel
+            and         r0      r0      x0;tell java to spin wheel
             jsr         TX
-            add         r0      r0      x9
 btnLoop     add         r0      r0      x1 ; speeding
             add         r1      r1      r0
             add         r3      r1      r4
