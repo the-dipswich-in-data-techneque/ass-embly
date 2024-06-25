@@ -1,4 +1,4 @@
-.orig x500
+.orig x3000
 ;                                           ;;;;;;;;;;;;;
 main        jsr         initcoms
             and         r1      r1      x0  ;current player
@@ -25,7 +25,7 @@ final       and         r0      r0      x0
 price       .fill       x-64
 ;                                           ;;;;;;;;;;;;;;
 initcoms    st          r7      storeR7
-            jsr         RX;;;R1 = cash, R2 = number of players
+loopcoms    jsr         RX;;;R1 = cash, R2 = number of players
             add         r0      r0      x0  ;see what was recieved
             brn         setCash
             brp         setCount
@@ -50,10 +50,10 @@ initloop    str         r0      r1      x0  ;store next player's cash
 setcash     not         r0      r0          ;flip to positive
             add         r0      r0      x1
             add         r1      r0      x0
-            brnzp       initcoms
+            brnzp       loopcoms
 setCount    add         r2      r0      x0  ;store player count
             st          r2      playerCount
-            brnzp       initcoms
+            brnzp       loopcoms
 ;                                           ;;;;;;;;;;;;;;
 progcoms    st          R1      storeR1
             st          R2      storeR2
