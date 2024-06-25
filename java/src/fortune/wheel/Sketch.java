@@ -15,6 +15,7 @@ public class Sketch extends PApplet {
   }
   @Override
   public void setup() {
+    UART.setup();
     setStates(State.start, null);
   }
   public void draw(){
@@ -41,7 +42,7 @@ public class Sketch extends PApplet {
         }
         break;
       case wheelStopping:
-        if(pickedWheel.safeRotate(getGraphics(), .02f)){
+        if(!pickedWheel.safeRotate(getGraphics(), .02f)){//no safe plz
           setStates(State.lastRolls, null);
         }
         
@@ -114,6 +115,11 @@ public class Sketch extends PApplet {
           b[i].remove();
         }
         break;
+        case wheelPick:
+          for (int i = 0; i < b.length; i++) {
+            b[i].remove();
+          }
+          break;
       default:
         break;
     }

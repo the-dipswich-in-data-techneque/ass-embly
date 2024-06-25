@@ -10,9 +10,6 @@ public class UART{
 
     public static void setup() {
         SerialPort[] ports = SerialPort.getCommPorts();
-        port.setComPortParameters(19200, 8, SerialPort.ONE_STOP_BIT, SerialPort.NO_PARITY);
-        port.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
-
         port = ports[0];
         for (int i = 0; i < ports.length; i++) {
             if(ports[i].getSystemPortName().contains("USB to UART Bridge")){
@@ -21,6 +18,8 @@ public class UART{
             }
         }
         port.openPort();
+        port.setComPortParameters(19200, 8, SerialPort.ONE_STOP_BIT, SerialPort.NO_PARITY);
+        port.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
     }
 
     public static short getShort(boolean locking){

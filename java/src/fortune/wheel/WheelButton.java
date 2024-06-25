@@ -21,10 +21,16 @@ public class WheelButton extends Button{
     }else{
       w.safeRotate(g, 0.005f);
     }
-    w.hueGraph(g, w.getLocation()[0], w.getLocation()[1] + w.getLocation()[2] + 5, 20, w.getLocation()[2]);
+    w.hueGraph(
+      g,
+      w.getLocation()[0],
+      w.getLocation()[1] + w.getLocation()[2] + 5,
+      20,
+      w.getLocation()[2]
+    );
   }
   @Override
   protected void action() {
-    Sketch.setStates(Sketch.State.wheelPick, w);
+    Sketch.setStates(Sketch.State.wheelSpin, w);
   }
 }
