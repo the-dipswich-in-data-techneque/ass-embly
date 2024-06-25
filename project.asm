@@ -213,14 +213,14 @@ loopRS      and         r1      r0      r2
             add         r4      r4      r4
             add         r2      r2      r2
             brnp        loopRS
-            ld          r3      stdoutstat
+            ldi         r3      stdoutstat x0
             brzp        x-2
-            st          r1      stdoutdat
+            sti         r1      stdoutdat x0
             ld          r2      lowerMask
             and         r1      r0      r2  ;bottom 8 bit
-            ld          r3      stdoutstat
+            ldi         r3      stdoutstat x0
             brzp        x-2
-            st          r1      stdoutdat
+            sti         r1      stdoutdat x0
             ld          r1      tempR1
             ld          r2      tempR2
             ld          r3      tempR3
