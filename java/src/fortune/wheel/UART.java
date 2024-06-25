@@ -3,10 +3,12 @@ import com.fazecast.jSerialComm.SerialPort;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-//import javax.swing.event.*;
-//import java.awt.event.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class UART {
+public class UART{
+
+    private Queue<String> messageQueue = new LinkedList<>();
 
     private static SerialPort port;
 
@@ -17,42 +19,58 @@ public class UART {
 
         port = ports[0];
         for (int i = 0; i < ports.length; i++) {
-            if(ports[i].getSystemPortName() == "CP2104 USB to UART Bridge Controller"){
+            if(ports[i].getSystemPortName().contains("USB to UART Bridge")){
                 port = ports[i];
+                break;
             }
         }
         port.openPort();
     }
 
-//    public void UART_sender() {
-//
-//        if (port.openPort()) {
-//            // Configure the port settings
-//            
-//
-//            // Send data
-//            String dataToSend = scanner.nextLine();
-//            byte[] writeBuffer = dataToSend.getBytes();
-//            port.writeBytes(writeBuffer, writeBuffer.length);
-//            System.out.println("Sent: " + dataToSend);
-//
-//            // Read data
-//            byte[] readBuffer = new byte[1024];
-//            while(port.bytesAvailable() < writeBuffer.length){
-//                try {
-//                    Thread.sleep(10);
-//                } catch (InterruptedException ignore) {}
-//            }
-//
-//            int numRead = port.readBytes(readBuffer, readBuffer.length);
-//            String receivedData = new String(readBuffer, 0, numRead);
-//            System.out.println("Received: " + receivedData);
-//            }
-//
-//
-//        // Close the port
-//        port.closePort();
-//    }
+    public void addToQueue(String message){
+        messageQueue.offer(message);
+    }
+
+    public void UART_sender() {
+        if (port.openPort()) {
+            byte[] writeBuffer;
+            String dataToSend;
+
+            // Send data
+            if(!messageQueue.isEmpty()){
+                dataToSend = messageQueue.poll() + "\n";
+                writeBuffer = dataToSend.getBytes();
+                port.writeBytes(writeBuffer, writeBuffer.length);
+
+            // Read data
+            byte[] readBuffer = new byte[1024];
+            while(port.bytesAvailable() < writeBuffer.length){
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException ignore) {}
+            }
+            int bytesRead = 0;
+            StringBuilder receivedData = new StringBuilder();
+
+            long timeout = System.currentTimeMillis() + 5000; // 5 seconds timeout
+
+            try {
+                while(System.currentTimeMillis() < timeout){
+                    if(port.bytesAvailable() > 0){
+                        bytesRead = port.readBytes(readBuffer, Math.min(port.bytesAvailable(), readBuffer.length));
+                        receivedData.append(new String(readBuffer, 0, bytesRead));
+
+                        // Check if we've received a complete message
+                        if (receivedData.toString().contains("\n")) {
+                            break;
+                        }
+                    }
+                    Thread.sleep(10); // Small delay to prevent busy-waiting
+                }
+            } catch (Exception ignore) {}
+        }
+    }
+    }
 
     public static short getShort(boolean locking){
         byte[] shortBuffer = new byte[2];
@@ -69,24 +87,32 @@ public class UART {
 
     public static boolean sendShort(short value, boolean locking){
         byte[] shorty = new byte[] {(byte)(value & 0xff), (byte)(value >> 8)};
-        
-        if(shorty.length == 2) return true;
-        
-        return false;
-    }
+        long timeout = System.currentTimeMillis() + 100;
+        int bytesWritten = 0;
+
+        while (bytesWritten < 2 && System.currentTimeMillis() < timeout) {
+            bytesWritten += port.writeBytes(shorty, shorty.length - bytesWritten, bytesWritten);
+        }
     
+        if (bytesWritten == 2) {
+            if (locking) {
+                while (System.currentTimeMillis() < timeout) {
+                    port.flushIOBuffers();
+                    if (port.bytesAwaitingWrite() == 0) {
+                        return true;  // All bytes have been transmitted
+                    }
+                    try {
+                        Thread.sleep(1);  // Small delay to prevent busy-waiting
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        return false;
+                    }
+                }
+                return false;  // Timeout occurred before all bytes were transmitted
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
-
-
-
-//            panel.addMouseListener(new MouseAdapter() {
-//                @Override
-//                public void mouseClicked(MouseEvent e) {
-//                    if (port.isOpen()) {
-//                        String dataToSend = "Click at (" + e.getX() + ", " + e.getY() + ")";
-//                        sendData(dataToSend);
-//                    } else {
-//                        System.out.println("Port is not open.");
-//                    }
-//                }
-//            });
