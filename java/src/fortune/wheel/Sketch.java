@@ -8,6 +8,7 @@ public class Sketch extends PApplet {
   private static State currentState = State.start;
   private static Wheel pickedWheel;
   private static short[] data = null;
+  private static int currentPlayer = 0;
   @Override
   public void settings() {
     size(400, 400);
@@ -28,7 +29,19 @@ public class Sketch extends PApplet {
         // also have a way to get to lastroll and bank from her.
         break;
       case wheelSpin:
-        //shows the wheel spin
+        pickedWheel.display(getGraphics(), .02f);
+        int slot = UART.getShort(false);
+        if(slot != -1){
+          pickedWheel.setDestination(slot);
+          Players.addMoney(currentPlayer, pickedWheel.getSlot(slot));
+          setStates(State.wheelStopping, null);
+        }
+        break;
+      case wheelStopping:
+        if(pickedWheel.safeRotate(getGraphics(), .02f)){
+          setStates(State.lastRolls, null);
+        }
+        
         break;
       case lastRolls:
       text("Last Rolls", 0, 0);
@@ -95,6 +108,8 @@ public class Sketch extends PApplet {
       case wheelSpin:
         pickedWheel = (Wheel)o;
         currentState = state;
+        pickedWheel.setLocation(200, 200, 100);
+        pickedWheel.sendSlots();
         break;
       case bank:
         rb = new ReturnButton(50, 250, 10, 50, Sketch.currentState);
@@ -116,6 +131,7 @@ public class Sketch extends PApplet {
     start,
     wheelPick,
     wheelSpin,
+    wheelStopping,
     lastRolls,
     bank,
     end,
