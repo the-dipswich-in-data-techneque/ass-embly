@@ -9,6 +9,7 @@ public class Sketch extends PApplet {
   private static Wheel pickedWheel;
   private static short[] data = null;
   private static int currentPlayer = 0;
+  private static int hit = -1;
   @Override
   public void settings() {
     size(400, 400);
@@ -34,6 +35,9 @@ public class Sketch extends PApplet {
       case wheelPick:
         push();
         fill(0,0,0);
+        if(hit != -1){
+          text("previous player, hit: " + hit + "kr.", 170, 40);
+        }
         text("player#" + currentPlayer, 170, 80);
         pop();
         break;
@@ -43,14 +47,15 @@ public class Sketch extends PApplet {
         if(UART.success){
           pickedWheel.setDestination(slot);
           Players.addMoney(currentPlayer, pickedWheel.getSlot(slot));
-          setStates(State.wheelStopping, null);
+          setStates(State.wheelStopping, (Integer) pickedWheel.getSlot(slot));
         }
         break;
       case wheelStopping:
         if(!pickedWheel.safeRotate(getGraphics(), .02f)){//no safe plz
-          setStates(State.lastRolls, null);
+          currentPlayer++;
+          currentPlayer %= Players.getPlayerAmount();
+          setStates(State.wheelPick, null);
         }
-        
         break;
       case lastRolls:
       text("Last Rolls", 0, 0);
@@ -130,6 +135,8 @@ public class Sketch extends PApplet {
     }
     switch (state) {
       case start:
+      if(o != null) hit = (int)o;
+      else hit = -1;
         b = new Button[4];
         b[0] = new StartButtons(80, 80, 120, 40, 0, "1 player");
         b[1] = new StartButtons(80, 130, 120, 40, 1, "2 players");

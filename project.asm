@@ -1,4 +1,4 @@
-.orig x0500
+.orig x500
 ;                                           ;;;;;;;;;;;;;
 main        jsr         initcoms
             and         r1      r1      x0  ;current player
@@ -14,6 +14,12 @@ normalRun   jsr         progcoms
             add         r2      r2      r0
             str         r2      r3      x0      
             add         r1      r1      x1
+            ld          r0      playerCount
+            not         r0      r0
+            add         r0      r0      x1
+            add         r0      r0      r1
+            brn         x1
+            and         r1      r1      x0
             brnzp       normalRun
 final       and         r0      r0      x0
             add         r0      r0      x-1
@@ -30,7 +36,7 @@ loopcoms    jsr         RX;;;R1 = cash, R2 = number of players
             brn         setCash
             brp         setCount
             lea         r0      playerStart 
-initloop    str         r0      r1      x0  ;store next player's cash
+initloop    str         r1      r0      x1  ;store next player's cash
             add         r0      r0      x1
             add         r2      r2      x-1
             brp         initloop
@@ -43,6 +49,7 @@ initloop    str         r0      r1      x0  ;store next player's cash
             add         r2      r2      r0
             not         r2      r2          ;set to negative
             add         r2      r2      x1
+            ld          r0      arrayStart
             add         r2      r2      r0  ;move the wheel to make space for old results
             st          r2      arrayStart
             ld          r7      storeR7
@@ -58,7 +65,6 @@ setCount    add         r2      r0      x0  ;store player count
 progcoms    st          R1      storeR1
             st          R2      storeR2
             st          r7      storeR7
-            jsr         store
 progAgain   jsr         RX
             add         r0      r0      x0
             brp         extend
@@ -69,10 +75,11 @@ seeold      lea         r1      resultStart ;get old results
             ldr         r0      r1      x0
             jsr         TX                  ;send results
             brnzp       progAgain
-;                                           ;;;;;;;;;;;;;;
 extend      ld          r1      arrayStart
             ld          r2      arrayLength
-            add         r1      r1      r2
+            not         r7      r2
+            add         r7      r7      x1
+            add         r1      r1      r7
             str         r0      r1      x0
             add         r2      r2      x1
             st          r2      arrayLength
@@ -152,7 +159,7 @@ store       st          R1      tempR1
             ld          r1      resultStart
             ld          r3      arrayStart
             not         r3      r3
-            add         r3      r3      x-1  ;move (so -1 becomes first)
+            add         r3      r3      x-1 ;move (so -1 becomes first)
 storeLoop   ldr         r2      r1      x0  ;remove from space
             str         r0      r1      x0  ;store from before
             add         r0      r2      x0  ;swap new to old position
@@ -223,5 +230,5 @@ arrayStart  .fill       xdfff
 arrayLength .fill       x0
 playerCount .fill       x0
 ;                                           ;;;;;;;;;;;;;;
-playerStart .fill       x0                  ;this is a position after program
+playerStart .fill       x0                 ;this is a position after program
 .end
