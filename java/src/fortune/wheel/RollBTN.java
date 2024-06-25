@@ -1,12 +1,15 @@
 package fortune.wheel;
 
+import processing.core.PApplet;
+import processing.core.PGraphics;
+
 public class RollBTN extends Button {
     public RollBTN(){
-        super(50,50,100,20);
-        buttonTxt = "Click me";
-    }
+        super(100, 100, 150, 75);
+        }
     @Override
     protected void action() {
+        buttonTxt = "done";
         
     }
     

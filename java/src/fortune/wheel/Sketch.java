@@ -3,36 +3,34 @@ package fortune.wheel;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  Wheel w = new Wheel(200, 200, 100);
-  float r = 0;
-  int i = 1000;
+  Button b = new RollBTN();
+  State currentState = State.start;
   @Override
   public void settings() {
     size(400, 400);
   }
   @Override
   public void setup() {
-    background(180f);
-    w.setSlots(generateSlots(
-      new int[] {0,1,20,30,60,90,100,150,200,250}, 
-      new int[] {1,1,10,10,25,35,60 ,18 ,11 ,5},
-      50
-    ));
-    w.setDestination(20);
-    w.display(getGraphics(), 0f);
-    w.hueGraph(getGraphics(), 300, 50, 20, 250);
+    b.drawButton(getGraphics(), this);
   }
-  @Override
-  public void draw() {
+  
+  public void draw(){
     background(180f);
-    w.hueGraph(g, 300, 50, 20, 250);
-    if(i > 0){
-      w.display(g, 0.02f);
-      i--;
-    }else{
-      w.safeRotate(g, 0.02f);
+    switch (currentState) {
+      case start:
+        
+        break;
+    
+      default:
+        break;
     }
   }
+
+  @Override
+  public void mousePressed() {
+    Button.click(this);
+  }
+  
   public int[] generateSlots(int[] value, int[] multiplier,int randomFactor){
     if(value.length != multiplier.length) return new int[]{0};
     int length = 0;
@@ -58,10 +56,9 @@ public class Sketch extends PApplet {
     }
     return slots;
   }
-  public void mouseClicked() {
-    Button.click(this);
-  }
-  public enum state{
+
+  
+  public enum State{
     start,
     wheelPick,
     wheelSpin,

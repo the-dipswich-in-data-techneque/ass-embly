@@ -69,14 +69,14 @@ set rc [catch {
   set_property board_part digilentinc.com:zybo:part0:2.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/3_ugers_projekt/LC3_Computer/LC3_Computer.cache/wt [current_project]
-  set_property parent.project_path C:/3_ugers_projekt/LC3_Computer/LC3_Computer.xpr [current_project]
-  set_property ip_output_repo C:/3_ugers_projekt/LC3_Computer/LC3_Computer.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.cache/wt [current_project]
+  set_property parent.project_path C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.xpr [current_project]
+  set_property ip_output_repo C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/LC3Zybo_top.dcp
-  read_edif C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/ZyboVIO_SE.edif
-  read_edif C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3.edif
-  read_xdc C:/3_ugers_projekt/LC3_Computer/LC3_Computer.srcs/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc
+  add_files -quiet C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.runs/synth_1/LC3Zybo_top.dcp
+  read_edif C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/ZyboVIO_SE.edif
+  read_edif C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.srcs/sources_1/imports/LC3ZyboV2/lc3.edif
+  read_xdc C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.srcs/constrs_1/imports/LC3ZyboV2/ZyboVIO.xdc
   link_design -top LC3Zybo_top -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]
