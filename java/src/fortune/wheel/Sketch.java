@@ -3,9 +3,9 @@ package fortune.wheel;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  Button b = new RollBTN();
-  State currentState = State.start;
-  Wheel pickedWheel;
+  private Button b = new RollBTN();
+  private static State currentState = State.start;
+  private Wheel pickedWheel;
   @Override
   public void settings() {
     size(400, 400);
@@ -66,7 +66,7 @@ public class Sketch extends PApplet {
     }
     return slots;
   }
-  public void setStates(State state, Object o){
+  public static void setStates(State state, Object o){
     currentState = state;
     switch (state) {
       case wheelSpin:
