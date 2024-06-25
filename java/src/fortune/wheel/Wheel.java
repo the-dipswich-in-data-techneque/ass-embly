@@ -99,6 +99,8 @@ public class Wheel {
     for (int i = 0; i < slots.length; i++) {
       UART.sendShort((short)slots[i], true);
     }
+    UART.sendShort((short)0, true);
+    UART.getShort(true);
   }
   public int getSlot(int i){
     return slots[i];
