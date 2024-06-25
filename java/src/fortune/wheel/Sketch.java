@@ -155,19 +155,19 @@ public class Sketch extends PApplet {
         WheelButton wb;
 
         wb = new WheelButton(50, 200, 50);
-        wb.setSlots(generateSlots(new int[]{1,5,10,15,20,30,60,90,100,150,200,250}, new int[]{2,2,2,2,3,4,5,9,10,6,5,5}, 5));
+        wb.setSlots(generateSlots(new int[]{1,5,10,15,20,30,60,90,100,150,200,250}, new int[]{2,3,5,5,5,5,8,10,30,12,10,5}, 5));
         b[0] = wb;
 
         wb = new WheelButton(150, 200, 50);
-        wb.setSlots(generateSlots(new int[]{1,5,10,15,20,30,60,90,100,150,200,250,300,400,500}, new int[]{5,5,5,5,5,6,8,9,10,6,5,4,3,2,1}, 5));
+        wb.setSlots(generateSlots(new int[]{1,5,10,15,20,30,60,90,100,150,200,250,300,400,500}, new int[]{5,5,5,6,6,7,15,11,11,14,5,4,3,2,1}, 5));
         b[1] = wb;
         
         wb = new WheelButton(250, 200, 50);
-        wb.setSlots(generateSlots(new int[]{1,5,10,15,20,30,60,90,100,150,200,250,300,400,500,750}, new int[]{4,5,10,10,10,10,15,10,15,5,5,5,4,3,2,1}, 5));
+        wb.setSlots(generateSlots(new int[]{5,10,15,20,30,60,90,100,150,200,250,300,400,500,750}, new int[]{3,5,9,10,15,10,10,16,6,5,4,3,2,1,1}, 5));
         b[2] = wb;
         
         wb = new WheelButton(350, 200, 50);
-        wb.setSlots(generateSlots(new int[]{15,20,30,60,90,100,150,200,250,500,1000}, new int[]{10,10,10,20,15,20,11,5,5,1,1}, 5));
+        wb.setSlots(generateSlots(new int[]{15,20,30,60,90,100,150,200,250,500,1000}, new int[]{10,10,10,15,14,20,10,6,3,1,1}, 5));
         b[3] = wb;
         
         currentState = state;

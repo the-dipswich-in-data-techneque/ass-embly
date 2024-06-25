@@ -10,16 +10,17 @@ public class UART{
 
     public static void setup() {
         SerialPort[] ports = SerialPort.getCommPorts();
+        
         port = ports[0];
         for (int i = 0; i < ports.length; i++) {
-            if(ports[i].getSystemPortName().contains("USB to UART Bridge")){
+            if(ports[i].getSystemPortName().contains("UART") || ports[i].getSystemPortName().contains("Feather")){
                 port = ports[i];
                 break;
             }
         }
-        port.openPort();
         port.setComPortParameters(19200, 8, SerialPort.ONE_STOP_BIT, SerialPort.NO_PARITY);
-        port.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
+        port.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 0, 0);
+        port.openPort();
     }
 
     public static short getShort(boolean locking){
@@ -68,7 +69,7 @@ public class UART{
             success = true;
             return true;
         } else {
-            success = false;
+            success = false;    
             return false;
         }
     }
