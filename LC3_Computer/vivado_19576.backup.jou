@@ -2,12 +2,16 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Jun 26 01:32:48 2024
-# Process ID: 10952
+# Start of session at: Wed Jun 26 00:53:15 2024
+# Process ID: 19576
 # Current directory: C:/3_ugers_projekt/LC3_Computer
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9528 C:\3_ugers_projekt\LC3_Computer\LC3_Computer.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9224 C:\3_ugers_projekt\LC3_Computer\LC3_Computer.xpr
 # Log file: C:/3_ugers_projekt/LC3_Computer/vivado.log
 # Journal file: C:/3_ugers_projekt/LC3_Computer\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/3_ugers_projekt/LC3_Computer/LC3_Computer.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
