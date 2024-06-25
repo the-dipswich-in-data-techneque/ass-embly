@@ -22,7 +22,7 @@ public class Sketch extends PApplet {
     Button.drawButton(getGraphics(),this);
     switch (currentState) {
       case start:
-        text("Pick a number of players for the game",0 ,0);
+        text("Pick a number of players for the game, you start with 1000",150 ,40);
         break;
       case wheelPick:
         // needs a way to show what player it is and have the need to pick a wheel
@@ -117,10 +117,10 @@ public class Sketch extends PApplet {
     switch (state) {
       case start:
         b = new Button[4];
-        b[0] = new StartButtons(10, 10, 10, 10, 0);
-        b[1] = new StartButtons(20, 20, 20, 20, 1);
-        b[2] = new StartButtons(30, 30, 30, 30, 2);
-        b[3] = new StartButtons(40, 40, 40, 40, 3);
+        b[0] = new StartButtons(80, 70, 120, 40, 0);
+        b[1] = new StartButtons(80, 120, 120, 40, 1);
+        b[2] = new StartButtons(80, 170, 120, 40, 2);
+        b[3] = new StartButtons(80, 220, 120, 40, 3);
         currentState = state;
         break;
         
