@@ -218,9 +218,9 @@ loopRS      and         r1      r0      r2
             sti         r1      stdoutdat
             ld          r2      lowerMask
             and         r1      r0      r2  ;bottom 8 bit
-            ldi         r3      stdoutstat
+            ldi         r3      stdoutstat x0
             brzp        x-2
-            sti         r1      stdoutdat
+            sti         r1      stdoutdat x0
             ld          r1      tempR1
             ld          r2      tempR2
             ld          r3      tempR3
