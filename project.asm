@@ -1,4 +1,4 @@
-.orig x500
+.orig x3000
 ;                                           ;;;;;;;;;;;;;
 main        jsr         initcoms
             and         r1      r1      x0  ;current player
@@ -36,7 +36,7 @@ loopcoms    jsr         RX;;;R1 = cash, R2 = number of players
             brn         setCash
             brp         setCount
             lea         r0      playerStart 
-initloop    str         r1      r0      x1  ;store next player's cash
+initloop    str         r1      r0      x0  ;store next player's cash
             add         r0      r0      x1
             add         r2      r2      x-1
             brp         initloop
