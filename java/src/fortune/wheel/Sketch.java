@@ -30,7 +30,7 @@ public class Sketch extends PApplet {
       case wheelSpin:
         pickedWheel.display(getGraphics(), .02f);
         int slot = UART.getShort(false);
-        if(slot != -1){
+        if(UART.success){
           pickedWheel.setDestination(slot);
           Players.addMoney(currentPlayer, pickedWheel.getSlot(slot));
           setStates(State.wheelStopping, null);
@@ -93,7 +93,7 @@ public class Sketch extends PApplet {
     }
     for (int i = 0; i < slots.length; i++) {
       int temp = slots[i];
-      int randomIndex = i + (int)random(randomFactor);
+      int randomIndex = i + (int)(Math.random() *randomFactor);
       if(randomIndex >= slots.length) randomIndex -= slots.length;
       if(randomIndex < 0) randomIndex += slots.length;
       slots[i] = slots[randomIndex];
