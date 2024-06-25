@@ -1,0 +1,8 @@
+LEA
+JSRR
+LD
+STI
+LD
+STI
+BRnzp
+TRAP x20

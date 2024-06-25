@@ -22,7 +22,8 @@ public class Sketch extends PApplet {
     Button.drawButton(getGraphics(),this);
     switch (currentState) {
       case start:
-        text("Pick a number of players for the game",0 ,0);
+        text("Pick a number of players for the game, you start with 1000",170 ,40);
+        text("it costs 100 pr.spin",140,60 );
         break;
       case wheelPick:
         text("player#" + currentPlayer, 10, 10);
@@ -115,10 +116,10 @@ public class Sketch extends PApplet {
     switch (state) {
       case start:
         b = new Button[4];
-        b[0] = new StartButtons(10, 10, 10, 10, 0);
-        b[1] = new StartButtons(20, 20, 20, 20, 1);
-        b[2] = new StartButtons(30, 30, 30, 30, 2);
-        b[3] = new StartButtons(40, 40, 40, 40, 3);
+        b[0] = new StartButtons(80, 80, 120, 40, 0, "1 player");
+        b[1] = new StartButtons(80, 130, 120, 40, 1, "2 players");
+        b[2] = new StartButtons(80, 180, 120, 40, 2, "3 players");
+        b[3] = new StartButtons(80, 230, 120, 40, 3, "4 players");
         currentState = state;
         break;
       case wheelSpin:
@@ -132,19 +133,19 @@ public class Sketch extends PApplet {
         WheelButton wb;
 
         wb = new WheelButton(50, 200, 50);
-        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        wb.setSlots(generateSlots(new int[]{1,5,10,15,20,30,60,90,100,150,200,250}, new int[]{2,2,2,2,3,4,5,9,10,6,5,5}, 5));
         b[0] = wb;
 
         wb = new WheelButton(50, 200, 50);
-        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        wb.setSlots(generateSlots(new int[]{1,5,10,15,20,30,60,90,100,150,200,250,300,400,500}, new int[]{5,5,5,5,5,6,8,9,10,6,5,4,3,2,1}, 5));
         b[1] = wb;
         
         wb = new WheelButton(50, 200, 50);
-        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        wb.setSlots(generateSlots(new int[]{1,5,10,15,20,30,60,90,100,150,200,250,300,400,500,750}, new int[]{4,5,10,10,10,10,15,10,15,5,5,5,4,3,2,1}, 5));
         b[2] = wb;
         
         wb = new WheelButton(50, 200, 50);
-        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        wb.setSlots(generateSlots(new int[]{15,20,30,60,90,100,150,200,250,500,1000}, new int[]{10,10,10,20,15,20,11,5,5,1,1}, 5));
         b[3] = wb;
         
         break;

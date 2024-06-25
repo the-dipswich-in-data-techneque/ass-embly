@@ -1,0 +1,8 @@
+ Addr: OPCODE   LineNo: Source
+x0500: x2405        10:                  LD  R2, IO_BASE    ; load IO_BASE and keep it in R2
+x0501: x608a        13:                  LDR  R0, R2, x0a   ; load IO_BASE+x0a  (xFE0A: DIO4 Switches) 
+x0502: x7092        14:                  STR  R0, R2, x12   ; load IO_BASE+x12  (xFE12: DIO4 7Seg)
+x0503: x608e        16:                  LDR  R0, R2, x0e   ; load IO_BASE+x0e  (xFE0E: DI04 Push buttons)
+x0504: x7096        17:                  STR  R0, R2, x16   ; load IO_BASE+x16  (xFE16: DI04 Leds)
+x0505: x0ffb        20:                  BR  IOCopy
+x0506: xfe00        23:          IO_BASE .FILL  xFE00
