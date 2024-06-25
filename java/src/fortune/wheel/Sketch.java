@@ -3,9 +3,9 @@ package fortune.wheel;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  private static Button[] b;
+  private static Button[] b = new Button[0];
   private static ReturnButton rb;
-  private static State currentState = State.start;
+  private static State currentState = null;
   private static Wheel pickedWheel;
   private static short[] data = null;
   private static int currentPlayer = 0;
@@ -15,15 +15,13 @@ public class Sketch extends PApplet {
   }
   @Override
   public void setup() {
-    setStates(currentState, null);
+    setStates(State.start, null);
   }
-  
   public void draw(){
     background(180f);
     Button.drawButton(getGraphics(),this);
     switch (currentState) {
       case start:
-        // needs a way to make 4 buttons so that we can pick the amount of players
         text("Pick a number of players for the game",0 ,0);
         break;
       case wheelPick:
@@ -118,7 +116,7 @@ public class Sketch extends PApplet {
     }
     switch (state) {
       case start:
-        b = new Button[3];
+        b = new Button[4];
         b[0] = new StartButtons(10, 10, 10, 10, 0);
         b[1] = new StartButtons(20, 20, 20, 20, 1);
         b[2] = new StartButtons(30, 30, 30, 30, 2);
