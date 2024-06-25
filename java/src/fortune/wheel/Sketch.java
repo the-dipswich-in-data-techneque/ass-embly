@@ -4,8 +4,10 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
   private Button b = new RollBTN();
+  private static ReturnButton rb;
   private static State currentState = State.start;
   private static Wheel pickedWheel;
+  private static short[] data = null;
   @Override
   public void settings() {
     size(400, 400);
@@ -29,7 +31,17 @@ public class Sketch extends PApplet {
         //shows the wheel spin
         break;
       case lastRolls:
-        // show the last 10 rolls and be able to return to wheelPick
+      text("Last Rolls", 0, 0);
+      for (int i = 0; i < Players.getPlayerAmount(); i++) {
+        text("#" + i, 0, 10 + 10 * i);
+      }
+        for (int i = 0; i < data.length; i++) {
+          text(
+            data[i], 
+            10 + 10 * (i % Players.getPlayerAmount()), 
+            10 + 10 * (i / Players.getPlayerAmount())
+          );
+        }
         break;
       case bank:
         text("Bank", 10, 10);
@@ -40,7 +52,6 @@ public class Sketch extends PApplet {
             50 + (300 / Players.getPlayerAmount()) * i
           );
         }
-        
         break;
       case end:
         // end screen.
@@ -84,6 +95,17 @@ public class Sketch extends PApplet {
       case wheelSpin:
         pickedWheel = (Wheel)o;
         currentState = state;
+        break;
+      case bank:
+        rb = new ReturnButton(50, 250, 10, 50, Sketch.currentState);
+        currentState = state;
+        break;
+      case lastRolls:
+      data = new short[Players.getPlayerAmount() * 10];
+      for (int i = 1; i < data.length + 1; i++) {
+        UART.sendShort((short)-i, true);
+        data[i - 1] = UART.getShort(true);
+      }
         break;
       default:
         currentState = state;

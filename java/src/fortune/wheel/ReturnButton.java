@@ -7,6 +7,7 @@ public class ReturnButton extends Button{
   public ReturnButton(int x, int y, int width, int height, State returnPoint) {
     super(x, y, width, height);
     this.returnPoint = returnPoint;
+    buttonTxt = "Return";
   }
   @Override
   protected void action() {
