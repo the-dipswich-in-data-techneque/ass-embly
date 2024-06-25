@@ -129,7 +129,7 @@ btnLoop     add         r0      r0      x1 ; speeding
             ldr         r3      r3      x0
             sti         r3      hex
             ld          r2      pbtn
-            and         r2      r2      x8
+            add         r2      r2      x0
             brp         btnLoop
 noBTN       add         r0      r0      x-1 ; slowing
             add         r1      r1      r0
