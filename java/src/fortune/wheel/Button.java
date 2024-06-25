@@ -7,7 +7,7 @@ import processing.core.PGraphics;
 
 public abstract class Button{
     public static ArrayList<Button> active = new ArrayList<>();
-    private int buttonX = 100, buttonY = 100, buttonWidth = 150, buttonHeight = 75;
+    protected int buttonX = 100, buttonY = 100, buttonWidth = 150, buttonHeight = 75;
     protected String buttonTxt = "You can click me";
     private boolean buttonHovered = false;
     public static void click(PApplet p){
