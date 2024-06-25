@@ -25,13 +25,12 @@ public class Sketch extends PApplet {
         text("Pick a number of players for the game, you start with 1000",150 ,40);
         break;
       case wheelPick:
-        // needs a way to show what player it is and have the need to pick a wheel
-        // also have a way to get to lastroll and bank from her.
+        text("player#" + currentPlayer, 10, 10);
         break;
       case wheelSpin:
         pickedWheel.display(getGraphics(), .02f);
         int slot = UART.getShort(false);
-        if(slot != -1){
+        if(UART.success){
           pickedWheel.setDestination(slot);
           Players.addMoney(currentPlayer, pickedWheel.getSlot(slot));
           setStates(State.wheelStopping, null);
@@ -77,7 +76,7 @@ public class Sketch extends PApplet {
     Button.click(this);
   }
   
-  public int[] generateSlots(int[] value, int[] multiplier,int randomFactor){
+  public static int[] generateSlots(int[] value, int[] multiplier,int randomFactor){
     if(value.length != multiplier.length) return new int[]{0};
     int length = 0;
     for (int i = 0; i < multiplier.length; i++) {
@@ -94,7 +93,7 @@ public class Sketch extends PApplet {
     }
     for (int i = 0; i < slots.length; i++) {
       int temp = slots[i];
-      int randomIndex = i + (int)random(randomFactor);
+      int randomIndex = i + (int)(Math.random() *randomFactor);
       if(randomIndex >= slots.length) randomIndex -= slots.length;
       if(randomIndex < 0) randomIndex += slots.length;
       slots[i] = slots[randomIndex];
@@ -110,7 +109,6 @@ public class Sketch extends PApplet {
           b[i].remove();
         }
         break;
-    
       default:
         break;
     }
@@ -123,12 +121,32 @@ public class Sketch extends PApplet {
         b[3] = new StartButtons(80, 220, 120, 40, 3);
         currentState = state;
         break;
-        
       case wheelSpin:
         pickedWheel = (Wheel)o;
         currentState = state;
         pickedWheel.setLocation(200, 200, 100);
         pickedWheel.sendSlots();
+        break;
+      case wheelPick:
+        b = new Button[4];
+        WheelButton wb;
+
+        wb = new WheelButton(50, 200, 50);
+        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        b[0] = wb;
+
+        wb = new WheelButton(50, 200, 50);
+        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        b[1] = wb;
+        
+        wb = new WheelButton(50, 200, 50);
+        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        b[2] = wb;
+        
+        wb = new WheelButton(50, 200, 50);
+        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        b[3] = wb;
+        
         break;
       case bank:
         rb = new ReturnButton(50, 250, 10, 50, Sketch.currentState);
