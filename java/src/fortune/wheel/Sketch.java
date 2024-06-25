@@ -24,13 +24,17 @@ public class Sketch extends PApplet {
         // needs a way to show what player it is and have the need to pick a wheel
         // also have a way to get to lastroll and bank from her.
         break;
+      case wheelSpin:
+        //shows the wheel spin
+        break;
       case lastRolls:
         // show the last 10 rolls and be able to return to wheelPick
         break;
       case bank:
         //show the amount of money every player has.
         break;
-      default:
+      case end:
+        // end screen.
         break;
     }
   }
