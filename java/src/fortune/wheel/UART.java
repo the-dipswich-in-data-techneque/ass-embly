@@ -70,4 +70,10 @@ public class UART {
         port.closePort();
         System.out.println("Port closed");
     }
+    public static short getShort(boolean locking){
+        return 0;
+    }
+    public static boolean sendShort(short value, boolean locking){
+        return false;
+    }
 }

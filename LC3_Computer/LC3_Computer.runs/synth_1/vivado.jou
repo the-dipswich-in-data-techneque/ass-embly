@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Jun 21 17:01:36 2024
-# Process ID: 3016
-# Current directory: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1
+# Start of session at: Sat Jun 22 18:19:55 2024
+# Process ID: 31692
+# Current directory: C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.runs/synth_1
 # Command line: vivado.exe -log LC3Zybo_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LC3Zybo_top.tcl
-# Log file: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/LC3Zybo_top.vds
-# Journal file: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1\vivado.jou
+# Log file: C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.runs/synth_1/LC3Zybo_top.vds
+# Journal file: C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source LC3Zybo_top.tcl -notrace

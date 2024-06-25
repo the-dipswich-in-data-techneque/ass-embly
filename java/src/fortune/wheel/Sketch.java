@@ -3,36 +3,67 @@ package fortune.wheel;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  Wheel w = new Wheel(200, 200, 100);
-  float r = 0;
-  int i = 1000;
+  private Button b = new RollBTN();
+  private static ReturnButton rb;
+  private static State currentState = State.start;
+  private static Wheel pickedWheel;
+  private static short[] data = null;
   @Override
   public void settings() {
     size(400, 400);
   }
   @Override
   public void setup() {
-    background(180f);
-    w.setSlots(generateSlots(
-      new int[] {0,1,20,30,60,90,100,150,200,250}, 
-      new int[] {1,1,10,10,25,35,60 ,18 ,11 ,5},
-      50
-    ));
-    w.setDestination(20);
-    w.display(getGraphics(), 0f);
-    w.hueGraph(getGraphics(), 300, 50, 20, 250);
+    b.drawButton(getGraphics(), this);
   }
-  @Override
-  public void draw() {
+  
+  public void draw(){
     background(180f);
-    w.hueGraph(g, 300, 50, 20, 250);
-    if(i > 0){
-      w.display(g, 0.02f);
-      i--;
-    }else{
-      w.safeRotate(g, 0.02f);
+    switch (currentState) {
+      case start:
+        // needs a way to make 4 buttons so that we can pick the amount of players
+        break;
+      case wheelPick:
+        // needs a way to show what player it is and have the need to pick a wheel
+        // also have a way to get to lastroll and bank from her.
+        break;
+      case wheelSpin:
+        //shows the wheel spin
+        break;
+      case lastRolls:
+      text("Last Rolls", 0, 0);
+      for (int i = 0; i < Players.getPlayerAmount(); i++) {
+        text("#" + i, 0, 10 + 10 * i);
+      }
+        for (int i = 0; i < data.length; i++) {
+          text(
+            data[i], 
+            10 + 10 * (i % Players.getPlayerAmount()), 
+            10 + 10 * (i / Players.getPlayerAmount())
+          );
+        }
+        break;
+      case bank:
+        text("Bank", 10, 10);
+        for (int i = 0; i < Players.getPlayerAmount(); i++) {
+          text(
+            "player#" + i + " : " + Players.getMoney(i) + "kr.", 
+            100, 
+            50 + (300 / Players.getPlayerAmount()) * i
+          );
+        }
+        break;
+      case end:
+        // end screen.
+        break;
     }
   }
+
+  @Override
+  public void mousePressed() {
+    Button.click(this);
+  }
+  
   public int[] generateSlots(int[] value, int[] multiplier,int randomFactor){
     if(value.length != multiplier.length) return new int[]{0};
     int length = 0;
@@ -58,10 +89,30 @@ public class Sketch extends PApplet {
     }
     return slots;
   }
-  public void mouseClicked() {
-    Button.click(this);
+  public static void setStates(State state, Object o){
+    currentState = state;
+    switch (state) {
+      case wheelSpin:
+        pickedWheel = (Wheel)o;
+        currentState = state;
+        break;
+      case bank:
+        rb = new ReturnButton(50, 250, 10, 50, Sketch.currentState);
+        currentState = state;
+        break;
+      case lastRolls:
+      data = new short[Players.getPlayerAmount() * 10];
+      for (int i = 1; i < data.length + 1; i++) {
+        UART.sendShort((short)-i, true);
+        data[i - 1] = UART.getShort(true);
+      }
+        break;
+      default:
+        currentState = state;
+        break;
+    }
   }
-  public enum state{
+  public enum State{
     start,
     wheelPick,
     wheelSpin,
