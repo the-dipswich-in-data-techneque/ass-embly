@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.xpr">
+<Project Version="7" Minor="38" Path="C:/3_ugers_projekt/LC3_Computer/LC3_Computer.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="e4ab395c1ba04d8f9d12fbfb7a763d0b"/>

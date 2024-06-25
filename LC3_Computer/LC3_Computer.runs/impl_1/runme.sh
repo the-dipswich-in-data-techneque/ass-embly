@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/02320_Digitale_systemer/3-uges/pro/ass-embly/LC3_Computer/LC3_Computer.runs/impl_1'
+HD_PWD='C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
