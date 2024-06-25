@@ -3,7 +3,7 @@ package fortune.wheel;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  private Button b;
+  private static Button[] b;
   private static ReturnButton rb;
   private static State currentState = State.start;
   private static Wheel pickedWheel;
@@ -20,6 +20,7 @@ public class Sketch extends PApplet {
   
   public void draw(){
     background(180f);
+    Button.drawButton(getGraphics(),this);
     switch (currentState) {
       case start:
         // needs a way to make 4 buttons so that we can pick the amount of players
@@ -105,9 +106,23 @@ public class Sketch extends PApplet {
   }
   public static void setStates(State state, Object o){
     currentState = state;
+    switch (currentState) {
+      case start:
+        for (int i = 0; i < b.length; i++) {
+          b[i].remove();
+        }
+        break;
+    
+      default:
+        break;
+    }
     switch (state) {
       case start:
-        
+        b = new Button[3];
+        b[0] = new StartButtons(10, 10, 10, 10, 0);
+        b[1] = new StartButtons(20, 20, 20, 20, 1);
+        b[2] = new StartButtons(30, 30, 30, 30, 2);
+        b[3] = new StartButtons(40, 40, 40, 40, 3);
         currentState = state;
         break;
         
