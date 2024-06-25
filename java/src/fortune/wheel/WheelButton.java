@@ -14,9 +14,14 @@ public class WheelButton extends Button{
   }
   public void display(PGraphics g, float rotation) {
     w.display(g, rotation);
+    if(destination != -1f) {
+      w.display(g, rotation);
+    }else{
+      w.safeRotate(g, rotation);
+    }
   }
   @Override
   protected void action() {
-    
+    Sketch.setStates(Sketch.State.wheelPick, w);
   }
 }

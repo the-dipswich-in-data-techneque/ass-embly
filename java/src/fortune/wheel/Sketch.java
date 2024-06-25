@@ -32,7 +32,15 @@ public class Sketch extends PApplet {
         // show the last 10 rolls and be able to return to wheelPick
         break;
       case bank:
-        //show the amount of money every player has.
+        text("Bank", 10, 10);
+        for (int i = 0; i < Players.getPlayerAmount(); i++) {
+          text(
+            "player#" + i + " : " + Players.getMoney(i) + "kr.", 
+            100, 
+            50 + (300 / Players.getPlayerAmount()) * i
+          );
+        }
+        
         break;
       case end:
         // end screen.
