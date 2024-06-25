@@ -14,6 +14,7 @@ public class Players {
   static public void payRoll(int player) {
     money[player] -= 100;
   }
+
   static public int getMoney(int player) {
     return money[player];
   }
