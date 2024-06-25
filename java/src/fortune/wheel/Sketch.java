@@ -23,13 +23,18 @@ public class Sketch extends PApplet {
     switch (currentState) {
       case start:
         push();
+        noStroke();//plz
+        fill(0,0,0);
         textAlign(CENTER);
         text("Pick a number of players for the game, you start with 1000",170 ,40);
         text("it costs 100 pr.spin",140,60 );
         pop();
         break;
       case wheelPick:
-        text("player#" + currentPlayer, 25, 10);
+        push();
+        fill(0,0,0);
+        text("player#" + currentPlayer, 170, 80);
+        pop();
         break;
       case wheelSpin:
         pickedWheel.display(getGraphics(), .02f);
