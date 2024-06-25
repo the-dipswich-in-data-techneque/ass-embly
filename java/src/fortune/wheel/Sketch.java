@@ -3,7 +3,7 @@ package fortune.wheel;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  private Button b = new RollBTN();
+  private Button b;
   private static ReturnButton rb;
   private static State currentState = State.start;
   private static Wheel pickedWheel;
@@ -14,7 +14,7 @@ public class Sketch extends PApplet {
   }
   @Override
   public void setup() {
-    b.drawButton(getGraphics(), this);
+    setStates(currentState, null);
   }
   
   public void draw(){
@@ -22,6 +22,7 @@ public class Sketch extends PApplet {
     switch (currentState) {
       case start:
         // needs a way to make 4 buttons so that we can pick the amount of players
+        text("Pick a number of players for the game",0 ,0);
         break;
       case wheelPick:
         // needs a way to show what player it is and have the need to pick a wheel
@@ -92,6 +93,11 @@ public class Sketch extends PApplet {
   public static void setStates(State state, Object o){
     currentState = state;
     switch (state) {
+      case start:
+        
+        currentState = state;
+        break;
+        
       case wheelSpin:
         pickedWheel = (Wheel)o;
         currentState = state;
