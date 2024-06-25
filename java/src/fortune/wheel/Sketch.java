@@ -55,7 +55,7 @@ public class Sketch extends PApplet {
           );
         }
         break;
-      case bank:
+      case bank:  
         text("Bank", 10, 10);
         for (int i = 0; i < Players.getPlayerAmount(); i++) {
           text(
