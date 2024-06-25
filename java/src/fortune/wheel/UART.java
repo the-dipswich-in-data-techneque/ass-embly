@@ -26,14 +26,14 @@ public class UART{
     public static short getShort(boolean locking){
         byte[] shortBuffer = new byte[2];
         long timeout = System.currentTimeMillis() + 100;
-        while (locking && System.currentTimeMillis() < timeout) {
+        do {
             int bytesRead = port.readBytes(shortBuffer, shortBuffer.length);
 
             if(bytesRead == 2){
                 success = true;
                 return ByteBuffer.wrap(shortBuffer).order(ByteOrder.BIG_ENDIAN).getShort();
             }
-        }
+        }while (locking && System.currentTimeMillis() < timeout);
         success = false;
         return 0;
     }
@@ -43,7 +43,7 @@ public class UART{
         long timeout = System.currentTimeMillis() + 100;
         int bytesWritten = 0;
 
-        while (bytesWritten < 2 && System.currentTimeMillis() < timeout) {
+    while (bytesWritten < 2 && System.currentTimeMillis() < timeout) {
             bytesWritten += port.writeBytes(shorty, shorty.length - bytesWritten, bytesWritten);
         }
     
