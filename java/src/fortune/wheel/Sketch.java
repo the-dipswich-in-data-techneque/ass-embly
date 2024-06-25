@@ -132,19 +132,19 @@ public class Sketch extends PApplet {
         WheelButton wb;
 
         wb = new WheelButton(50, 200, 50);
-        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        wb.setSlots(generateSlots(new int[]{0,1,5,10,15,20,30,60,90,100,150,200,250}, new int[]{1,2,2,2,2,3,4,5,9,10,6,5,5}, 5));
         b[0] = wb;
 
         wb = new WheelButton(50, 200, 50);
-        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        wb.setSlots(generateSlots(new int[]{0,1,5,10,15,20,30,60,90,100,150,200,250,300,400,500}, new int[]{1,5,5,5,5,5,6,8,9,10,6,5,4,3,2,1}, 5));
         b[1] = wb;
         
         wb = new WheelButton(50, 200, 50);
-        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        wb.setSlots(generateSlots(new int[]{0,1,5,10,15,20,30,60,90,100,150,200,250,300,400,500,750}, new int[]{1,4,5,10,10,10,10,15,10,15,5,5,5,4,3,2,1}, 5));
         b[2] = wb;
         
         wb = new WheelButton(50, 200, 50);
-        wb.setSlots(generateSlots(new int[]{0,1,2,3,4,5,6,7,8,9}, new int[]{1,1,1,1,1,1,1,1,1,1}, 5));
+        wb.setSlots(generateSlots(new int[]{0,15,20,30,60,90,100,150,200,250,500,1000}, new int[]{1,10,10,10,20,15,20,11,5,5,1,1}, 5));
         b[3] = wb;
         
         break;
