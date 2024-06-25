@@ -5,7 +5,7 @@ import processing.core.PApplet;
 public class Sketch extends PApplet {
   private Button b = new RollBTN();
   private static State currentState = State.start;
-  private Wheel pickedWheel;
+  private static Wheel pickedWheel;
   @Override
   public void settings() {
     size(400, 400);
