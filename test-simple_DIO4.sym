@@ -1,0 +1,8 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	DIO4Start         0500
+//	IOCopy            0501
+//	IO_BASE           0506
+

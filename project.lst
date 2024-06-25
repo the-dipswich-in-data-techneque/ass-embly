@@ -1,0 +1,212 @@
+ Addr: OPCODE   LineNo: Source
+x0500: x4816         3:             main JSR          initcoms
+x0501: x5260         4:                  AND          r1      r1      x0  ;current player
+x0502: x4832         5:        normalRun JSR          progcoms
+x0503: xe4ce         6:                  LEA          r2      playerStart ;;R2 = player data, R3 addres, R4 = math
+x0504: x1681         7:                  ADD          r3      r2      r1
+x0505: x64c0         8:                  LDR          r2      r3      x0
+x0506: x280f         9:                  LD           r4      price
+x0507: x1884        10:                  ADD          r4      r2   r4
+x0508: x0806        11:                  BRn          final
+x0509: x484d        12:                  JSR          roll
+x050a: x4880        13:                  JSR          store
+x050b: x1480        14:                  ADD          r2      r2      r0
+x050c: x74c0        15:                  STR          r2      r3      x0      
+x050d: x1261        16:                  ADD          r1      r1      x1
+x050e: x0ff3        17:                  BRnzp        normalRun
+x050f: x5020        18:            final AND          r0      r0      x0
+x0510: x103f        19:                  ADD          r0      r0      x-1
+x0511: x48a4        20:                  JSR          TX
+x0512: x48a3        21:                  JSR          TX
+x0513: x1060        22:                  ADD          r0      r1      x0
+x0514: x48a1        23:                  JSR          TX
+x0515: x0fea        24:                  BRnzp        main
+x0516: xff9c        25:            price .FILL        x-64
+x0517: x3e3a        27:         initcoms ST           r7      storeR7
+x0518: x4883        28:         loopcoms JSR          RX;;;R1 = cash, R2 = number of players
+x0519: x1020        29:                  ADD          r0      r0      x0  ;see what was recieved
+x051a: x0813        30:                  BRn          setCash
+x051b: x0216        31:                  BRp          setCount
+x051c: xe0b5        32:                  LEA          r0      playerStart 
+x051d: x7040        33:         initloop STR          r0      r1      x0  ;store next player's cash
+x051e: x1021        34:                  ADD          r0      r0      x1
+x051f: x14bf        35:                  ADD          r2      r2      x-1
+x0520: x03fc        36:                  BRp          initloop
+x0521: x20af        37:                  LD           r0      playerCount 
+x0522: x22ac        38:                  LD           r1      arrayStart
+x0523: x1400        39:                  ADD          r2      r0      r0  ;mult by 10
+x0524: x1482        40:                  ADD          r2      r2      r2
+x0525: x1482        41:                  ADD          r2      r2      r2
+x0526: x1480        42:                  ADD          r2      r2      r0
+x0527: x1480        43:                  ADD          r2      r2      r0
+x0528: x94bf        44:                  NOT          r2      r2          ;set to negative
+x0529: x14a1        45:                  ADD          r2      r2      x1
+x052a: x1480        46:                  ADD          r2      r2      r0  ;move the wheel to make space for old results
+x052b: x34a3        47:                  ST           r2      arrayStart
+x052c: x2e25        48:                  LD           r7      storeR7
+x052d: xc1c0        49:                  RET                              ;;;;;;;;;;;;;;
+x052e: x903f        50:          setcash NOT          r0      r0          ;flip to positive
+x052f: x1021        51:                  ADD          r0      r0      x1
+x0530: x1220        52:                  ADD          r1      r0      x0
+x0531: x0fe6        53:                  BRnzp        loopcoms
+x0532: x1420        54:         setCount ADD          r2      r0      x0  ;store player count
+x0533: x349d        55:                  ST           r2      playerCount
+x0534: x0fe3        56:                  BRnzp        loopcoms
+x0535: x3217        58:         progcoms ST           R1      storeR1
+x0536: x3417        59:                  ST           R2      storeR2
+x0537: x3e1a        60:                  ST           r7      storeR7
+x0538: x4852        61:                  JSR          store
+x0539: x4862        62:        progAgain JSR          RX
+x053a: x1020        63:                  ADD          r0      r0      x0
+x053b: x0206        64:                  BRp          extend
+x053c: x040c        65:                  BRz          progDone
+x053d: xe290        67:           seeold LEA          r1      resultStart ;get old results
+x053e: x1240        68:                  ADD          r1      r1      r0
+x053f: x6040        69:                  LDR          r0      r1      x0
+x0540: x4875        70:                  JSR          TX                  ;send results
+x0541: x0ff7        71:                  BRnzp        progAgain
+x0542: x228c        73:           extend LD           r1      arrayStart
+x0543: x248c        74:                  LD           r2      arrayLength
+x0544: x1242        75:                  ADD          r1      r1      r2
+x0545: x7040        76:                  STR          r0      r1      x0
+x0546: x14a1        77:                  ADD          r2      r2      x1
+x0547: x3488        78:                  ST           r2      arrayLength
+x0548: x0ff0        79:                  BRnzp        progAgain
+x0549: x2203        80:         progDone LD           R1      storeR1
+x054a: x2403        81:                  LD           R2      storeR2
+x054b: x2e06        82:                  LD           r7      storeR7
+x054c: xc1c0        83:                  RET 
+x054d: x0000        84:          storeR1 .FILL        x0000
+x054e: x0000        85:          storeR2 .FILL        x0000
+x054f: x0000        86:          storeR3 .FILL        x0000
+x0550: x0000        87:          storeR4 .FILL        x0000
+x0551: x0000        88:          storeR5 .FILL        x0000
+x0552: x0000        89:          storeR7 .FILL        x0000
+x0553: xfe02        91:         stdindat .FILL        xfe02
+x0554: xfe00        92:        stdinstat .FILL        xfe00
+x0555: xfe0b        94:             pbtn .FILL        xFe0B
+x0556: xfe12        95:              hex .FILL        xFE12
+x0557: x3ffa        96:             roll ST           r7      storeR7 ;sub routine
+x0558: x33f4        97:                  ST           r1      storeR1 ;location
+x0559: x35f4        98:                  ST           r2      storeR2 ;btn
+x055a: x37f4        99:                  ST           r3      storeR3 ;math into
+x055b: x39f4       100:                  ST           r4      storeR4 ;array length
+x055c: x3bf4       101:                  ST           r5      storeR5 ;arrayLocation
+x055d: x5260       102:                  AND          r1      r1      x0
+x055e: x2871       103:                  LD           r4      arrayLength
+x055f: x993f       104:                  NOT          r4      r4
+x0560: x1921       105:                  ADD          r4      r4      x1
+x0561: x21f3       106:                  LD           r0      pbtn
+x0562: x5028       107:                  AND          r0      r0      x8
+x0563: x05fd       108:                  BRz          x-3
+x0564: x1037       109:                  ADD          r0      r0      x-9 ;tell java to spin wheel
+x0565: x4850       110:                  JSR          TX
+x0566: x1029       111:                  ADD          r0      r0      x9
+x0567: x1021       112:          btnLoop ADD          r0      r0      x1 ; speeding
+x0568: x1240       113:                  ADD          r1      r1      r0
+x0569: x1644       114:                  ADD          r3      r1      r4
+x056a: x0203       115:                  BRp          x3                  ;modulus operation
+x056b: x1244       116:                  ADD          r1      r1      r4
+x056c: x1644       117:                  ADD          r3      r1      r4
+x056d: x03fd       118:                  BRp          x-3                 ;more modulus
+x056e: x967f       119:                  NOT          r3      r1
+x056f: x16e1       120:                  ADD          r3      r3      x1
+x0570: x16c5       121:                  ADD          r3      r3      r5
+x0571: x66c0       122:                  LDR          r3      r3      x0
+x0572: xb7e3       123:                  STI          r3      hex
+x0573: x25e1       124:                  LD           r2      pbtn
+x0574: x54a8       125:                  AND          r2      r2      x8
+x0575: x03f1       126:                  BRp          btnLoop
+x0576: x103f       127:            noBTN ADD          r0      r0      x-1 ; slowing
+x0577: x1240       128:                  ADD          r1      r1      r0
+x0578: x0203       129:                  BRp          x3                  ;modulus operation
+x0579: x1244       130:                  ADD          r1      r1      r4
+x057a: x1644       131:                  ADD          r3      r1      r4
+x057b: x03fd       132:                  BRp          x-3                 ;more modulus
+x057c: x967f       133:                  NOT          r3      r1
+x057d: x16e1       134:                  ADD          r3      r3      x1
+x057e: x16c5       135:                  ADD          r3      r3      r5
+x057f: x66c0       136:                  LDR          r3      r3      x0
+x0580: xb7d5       137:                  STI          r3      hex
+x0581: x10e0       138:                  ADD          r0      r3      x0
+x0582: x1440       139:                  ADD          r2      r1      r0
+x0583: x03f2       140:                  BRp          noBTN
+x0584: x2fcd       141:                  LD           r7      storeR7 ;sub routine
+x0585: x23c7       142:                  LD           r1      storeR1 ;location
+x0586: x25c7       143:                  LD           r2      storeR2 ;btn
+x0587: x27c7       144:                  LD           r3      storeR3 ;math into
+x0588: x29c7       145:                  LD           r4      storeR4 ;array length
+x0589: x2bc7       146:                  LD           r5      storeR5 ;arrayLocation
+x058a: xc1c0       147:                  RET 
+x058b: x3222       149:            store ST           R1      tempR1
+x058c: x3422       150:                  ST           R2      tempR2
+x058d: x3622       151:                  ST           R3      tempR3
+x058e: x223f       152:                  LD           r1      resultStart
+x058f: x263f       153:                  LD           r3      arrayStart
+x0590: x96ff       154:                  NOT          r3      r3
+x0591: x16ff       155:                  ADD          r3      r3      x-1  ;move (so -1 becomes first)
+x0592: x6440       156:        storeLoop LDR          r2      r1      x0  ;remove from space
+x0593: x7040       157:                  STR          r0      r1      x0  ;store from before
+x0594: x10a0       158:                  ADD          r0      r2      x0  ;swap new to old position
+x0595: x127f       159:                  ADD          r1      r1      x-1 ;move to next
+x0596: x1443       160:                  ADD          r2      r1      r3  ;see if there is space for mor
+x0597: x03fa       161:                  BRp          storeLoop           ;repeat
+x0598: x2215       162:                  LD           r1      tempR1
+x0599: x2415       163:                  LD           r2      tempR2
+x059a: x2615       164:                  LD           r3      tempR3
+x059b: xc1c0       165:                  RET 
+x059c: x3211       168:               RX ST           r1      tempR1
+x059d: x21b6       169:                  LD           r0      stdinstat
+x059e: x07fe       170:                  BRzp         x-2
+x059f: x23b3       171:                  LD           r1      stdindat
+x05a0: x1241       172:                  ADD          r1      r1      r1  ;left shift 1
+x05a1: x1241       173:                  ADD          r1      r1      r1  ;2
+x05a2: x1241       174:                  ADD          r1      r1      r1  ;3
+x05a3: x1241       175:                  ADD          r1      r1      r1  ;4
+x05a4: x1241       176:                  ADD          r1      r1      r1  ;5
+x05a5: x1241       177:                  ADD          r1      r1      r1  ;6
+x05a6: x1241       178:                  ADD          r1      r1      r1  ;7
+x05a7: x1241       179:                  ADD          r1      r1      r1  ;8
+x05a8: x21ab       180:                  LD           r0      stdinstat
+x05a9: x07fe       181:                  BRzp         x-2
+x05aa: x21a8       182:                  LD           r0      stdindat
+x05ab: x1001       183:                  ADD          r0      r0      r1  ;full word from transmision
+x05ac: x2201       184:                  LD           r1      tempR1
+x05ad: xc1c0       185:                  RET 
+x05ae: x0000       186:           tempR1 .FILL    x0
+x05af: x0000       187:           tempR2 .FILL    x0
+x05b0: x0000       188:           tempR3 .FILL    x0
+x05b1: x0000       189:           tempR4 .FILL    x0
+x05b2: xfe06       191:        stdoutdat .FILL        xfe06
+x05b3: xfe04       192:       stdoutstat .FILL        xfe04
+x05b4: x00ff       194:        lowerMask .FILL        xff
+x05b5: x0100       195:          topMask .FILL        x100
+x05b6: x33f7       196:               TX ST           r1      tempR1
+x05b7: x35f7       197:                  ST           r2      tempR2
+x05b8: x37f7       198:                  ST           r3      tempR3
+x05b9: x39f7       199:                  ST           r4      tempR4
+x05ba: x25fa       200:                  LD           r2      topMask
+x05bb: x5920       201:                  AND          r4      r4      x0  ;find the top 8 bit
+x05bc: x1921       202:                  ADD          r4      r4      x1
+x05bd: x5202       203:           loopRS AND          r1      r0      r2
+x05be: x1904       204:                  ADD          r4      r4      r4
+x05bf: x1482       205:                  ADD          r2      r2      r2
+x05c0: x0bfc       206:                  BRnp         loopRS
+x05c1: x27f1       207:                  LD           r3      stdoutstat
+x05c2: x07fe       208:                  BRzp         x-2
+x05c3: x33ee       209:                  ST           r1      stdoutdat
+x05c4: x25ef       210:                  LD           r2      lowerMask
+x05c5: x5202       211:                  AND          r1      r0      r2  ;bottom 8 bit
+x05c6: x27ec       212:                  LD           r3      stdoutstat
+x05c7: x07fe       213:                  BRzp         x-2
+x05c8: x33e9       214:                  ST           r1      stdoutdat
+x05c9: x23e4       215:                  LD           r1      tempR1
+x05ca: x25e4       216:                  LD           r2      tempR2
+x05cb: x27e4       217:                  LD           r3      tempR3
+x05cc: x29e4       218:                  LD           r4      tempR4
+x05cd: xc1c0       219:                  RET 
+x05ce: xdfff       221:      resultStart .FILL        xdfff
+x05cf: xdfff       222:       arrayStart .FILL        xdfff
+x05d0: x0000       223:      arrayLength .FILL        x0
+x05d1: x0000       224:      playerCount .FILL        x0
+x05d2: x0000       226:      playerStart .FILL        x0                  ;this is a position after program
