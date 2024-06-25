@@ -17,6 +17,11 @@ public class Wheel {
     this.r = r;
     slots = new int[]{0};
   }
+  public void setLocation(int x, int y, int r){
+    this.x = x;
+    this.y = y;
+    this.r = r;
+  }
   public void setSlots(int[] slots) {
     this.slots = slots;
     min = slots[0];
@@ -52,16 +57,17 @@ public class Wheel {
     while(this.rotation < 0) this.rotation += Math.PI * 2;
     while(this.rotation > Math.PI * 2) this.rotation -= Math.PI * 2;
   }
-  public void safeRotate(PGraphics g, float rotation){
+  public boolean safeRotate(PGraphics g, float rotation){
     if(
         rotation >= 0 && this.rotation + rotation >= destination && this.rotation <= destination || 
         rotation <= 0 && this.rotation + rotation <= destination && this.rotation >= destination
       ) {
       this.rotation = destination;
       display(g, 0);
-      return;
+      return false;
     }
     display(g,rotation);
+    return true;
   }
   public void hueGraph(PGraphics g, int x, int y, int width, int height){
     g.push();
@@ -88,5 +94,13 @@ public class Wheel {
   }
   public int[] getLocation(){
     return new int[]{x,y,r};
+  }
+  public void sendSlots() {
+    for (int i = 0; i < slots.length; i++) {
+      UART.sendShort((short)slots[i], true);
+    }
+  }
+  public int getSlot(int i){
+    return slots[i];
   }
 }

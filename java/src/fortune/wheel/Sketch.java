@@ -3,18 +3,19 @@ package fortune.wheel;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  private Button b = new RollBTN();
+  private Button b;
   private static ReturnButton rb;
   private static State currentState = State.start;
   private static Wheel pickedWheel;
   private static short[] data = null;
+  private static int currentPlayer = 0;
   @Override
   public void settings() {
     size(400, 400);
   }
   @Override
   public void setup() {
-    b.drawButton(getGraphics(), this);
+    setStates(currentState, null);
   }
   
   public void draw(){
@@ -22,13 +23,26 @@ public class Sketch extends PApplet {
     switch (currentState) {
       case start:
         // needs a way to make 4 buttons so that we can pick the amount of players
+        text("Pick a number of players for the game",0 ,0);
         break;
       case wheelPick:
         // needs a way to show what player it is and have the need to pick a wheel
         // also have a way to get to lastroll and bank from her.
         break;
       case wheelSpin:
-        //shows the wheel spin
+        pickedWheel.display(getGraphics(), .02f);
+        int slot = UART.getShort(false);
+        if(slot != -1){
+          pickedWheel.setDestination(slot);
+          Players.addMoney(currentPlayer, pickedWheel.getSlot(slot));
+          setStates(State.wheelStopping, null);
+        }
+        break;
+      case wheelStopping:
+        if(pickedWheel.safeRotate(getGraphics(), .02f)){
+          setStates(State.lastRolls, null);
+        }
+        
         break;
       case lastRolls:
       text("Last Rolls", 0, 0);
@@ -92,9 +106,16 @@ public class Sketch extends PApplet {
   public static void setStates(State state, Object o){
     currentState = state;
     switch (state) {
+      case start:
+        
+        currentState = state;
+        break;
+        
       case wheelSpin:
         pickedWheel = (Wheel)o;
         currentState = state;
+        pickedWheel.setLocation(200, 200, 100);
+        pickedWheel.sendSlots();
         break;
       case bank:
         rb = new ReturnButton(50, 250, 10, 50, Sketch.currentState);
@@ -116,6 +137,7 @@ public class Sketch extends PApplet {
     start,
     wheelPick,
     wheelSpin,
+    wheelStopping,
     lastRolls,
     bank,
     end,
