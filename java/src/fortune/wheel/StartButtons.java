@@ -5,8 +5,8 @@ package fortune.wheel;
  */
 public class StartButtons extends Button{
     private int id;
-    public StartButtons(int x, int y, int width, int height, int id) {
-        super(x, y, width, height);
+    public StartButtons(int x, int y, int width, int height, int id, String txt) {
+        super(x, y, width, height, txt);
         this.id = id;
     }
 

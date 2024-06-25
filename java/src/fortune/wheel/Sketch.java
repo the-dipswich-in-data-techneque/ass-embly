@@ -22,7 +22,8 @@ public class Sketch extends PApplet {
     Button.drawButton(getGraphics(),this);
     switch (currentState) {
       case start:
-        text("Pick a number of players for the game, you start with 1000",150 ,40);
+        text("Pick a number of players for the game, you start with 1000",170 ,40);
+        text("it costs 100 pr.spin",140,60 );
         break;
       case wheelPick:
         text("player#" + currentPlayer, 10, 10);
@@ -115,10 +116,10 @@ public class Sketch extends PApplet {
     switch (state) {
       case start:
         b = new Button[4];
-        b[0] = new StartButtons(80, 70, 120, 40, 0);
-        b[1] = new StartButtons(80, 120, 120, 40, 1);
-        b[2] = new StartButtons(80, 170, 120, 40, 2);
-        b[3] = new StartButtons(80, 220, 120, 40, 3);
+        b[0] = new StartButtons(80, 80, 120, 40, 0, "1 player");
+        b[1] = new StartButtons(80, 130, 120, 40, 1, "2 players");
+        b[2] = new StartButtons(80, 180, 120, 40, 2, "3 players");
+        b[3] = new StartButtons(80, 230, 120, 40, 3, "4 players");
         currentState = state;
         break;
       case wheelSpin:
