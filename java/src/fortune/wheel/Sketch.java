@@ -5,6 +5,7 @@ import processing.core.PApplet;
 public class Sketch extends PApplet {
   Button b = new RollBTN();
   State currentState = State.start;
+  Wheel pickedWheel;
   @Override
   public void settings() {
     size(400, 400);
@@ -18,9 +19,18 @@ public class Sketch extends PApplet {
     background(180f);
     switch (currentState) {
       case start:
-        
+        // needs a way to make 4 buttons so that we can pick the amount of players
         break;
-    
+      case wheelPick:
+        // needs a way to show what player it is and have the need to pick a wheel
+        // also have a way to get to lastroll and bank from her.
+        break;
+      case lastRolls:
+        // show the last 10 rolls and be able to return to wheelPick
+        break;
+      case bank:
+        //show the amount of money every player has.
+        break;
       default:
         break;
     }
@@ -56,8 +66,18 @@ public class Sketch extends PApplet {
     }
     return slots;
   }
-
-  
+  public void setStates(State state, Object o){
+    currentState = state;
+    switch (state) {
+      case wheelSpin:
+        pickedWheel = (Wheel)o;
+        currentState = state;
+        break;
+      default:
+        currentState = state;
+        break;
+    }
+  }
   public enum State{
     start,
     wheelPick,
