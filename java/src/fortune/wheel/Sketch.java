@@ -22,7 +22,8 @@ public class Sketch extends PApplet {
     Button.drawButton(getGraphics(),this);
     switch (currentState) {
       case start:
-        text("Pick a number of players for the game",0 ,0);
+        text("Pick a number of players for the game, you start with 1000",170 ,40);
+        text("it costs 100 pr.spin",140,60 );
         break;
       case wheelPick:
         text("player#" + currentPlayer, 10, 10);
@@ -30,7 +31,7 @@ public class Sketch extends PApplet {
       case wheelSpin:
         pickedWheel.display(getGraphics(), .02f);
         int slot = UART.getShort(false);
-        if(slot != -1){
+        if(UART.success){
           pickedWheel.setDestination(slot);
           Players.addMoney(currentPlayer, pickedWheel.getSlot(slot));
           setStates(State.wheelStopping, null);
@@ -93,7 +94,7 @@ public class Sketch extends PApplet {
     }
     for (int i = 0; i < slots.length; i++) {
       int temp = slots[i];
-      int randomIndex = i + (int)random(randomFactor);
+      int randomIndex = i + (int)(Math.random() *randomFactor);
       if(randomIndex >= slots.length) randomIndex -= slots.length;
       if(randomIndex < 0) randomIndex += slots.length;
       slots[i] = slots[randomIndex];
@@ -115,10 +116,10 @@ public class Sketch extends PApplet {
     switch (state) {
       case start:
         b = new Button[4];
-        b[0] = new StartButtons(10, 10, 10, 10, 0);
-        b[1] = new StartButtons(20, 20, 20, 20, 1);
-        b[2] = new StartButtons(30, 30, 30, 30, 2);
-        b[3] = new StartButtons(40, 40, 40, 40, 3);
+        b[0] = new StartButtons(80, 80, 120, 40, 0, "1 player");
+        b[1] = new StartButtons(80, 130, 120, 40, 1, "2 players");
+        b[2] = new StartButtons(80, 180, 120, 40, 2, "3 players");
+        b[3] = new StartButtons(80, 230, 120, 40, 3, "4 players");
         currentState = state;
         break;
       case wheelSpin:

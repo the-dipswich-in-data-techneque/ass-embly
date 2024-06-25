@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 public class UART{
-
+    public static boolean success = false;
     private static SerialPort port;
 
     public static void setup() {
@@ -30,9 +30,11 @@ public class UART{
             int bytesRead = port.readBytes(shortBuffer, shortBuffer.length);
 
             if(bytesRead == 2){
+                success = true;
                 return ByteBuffer.wrap(shortBuffer).order(ByteOrder.BIG_ENDIAN).getShort();
             }
         }
+        success = false;
         return 0;
     }
 
@@ -50,19 +52,24 @@ public class UART{
                 while (System.currentTimeMillis() < timeout) {
                     port.flushIOBuffers();
                     if (port.bytesAwaitingWrite() == 0) {
+                        success = true;
                         return true;  // All bytes have been transmitted
                     }
                     try {
                         Thread.sleep(1);  // Small delay to prevent busy-waiting
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
+                        success  = false;
                         return false;
                     }
                 }
+                success = false;
                 return false;  // Timeout occurred before all bytes were transmitted
             }
+            success = true;
             return true;
         } else {
+            success = false;
             return false;
         }
     }
