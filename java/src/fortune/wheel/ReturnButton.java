@@ -5,9 +5,8 @@ import fortune.wheel.Sketch.State;
 public class ReturnButton extends Button{
   State returnPoint;
   public ReturnButton(int x, int y, int width, int height, State returnPoint) {
-    super(x, y, width, height);
+    super(x, y, width, height,"return");
     this.returnPoint = returnPoint;
-    buttonTxt = "Return";
   }
   @Override
   protected void action() {

@@ -48,7 +48,7 @@ public class Wheel {
     float end = PApplet.PI*2f/slots.length;
     for (int i = 0; i < slots.length; i++) {
       g.fill(slots[i]-min,1,1);
-      g.arc(0, 0, r, r, start, end);
+      g.arc(0, 0, r*2, r*2, start, end);
       start = end;
       end += PApplet.PI*2f/slots.length;
     }

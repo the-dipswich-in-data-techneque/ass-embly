@@ -31,20 +31,24 @@ public abstract class Button{
     }
     public static void drawButton(PGraphics g, PApplet p) {
         for (int i = 0; i < active.size(); i++) {
-            active.get(i).buttonHovered = active.get(i).isMouseOverButton(p);
-            if(active.get(i).buttonHovered){
-                g.fill(200);
-            } else{
-                g.fill(150);
-            }
-            g.rect(active.get(i).buttonX, active.get(i).buttonY, active.get(i).buttonWidth, active.get(i).buttonHeight);
-            g.fill(0);
-            g.textAlign(PApplet.CENTER, PApplet.CENTER);
-            //g.text(active.get(i).buttonTxt, active.get(i).buttonX + active.get(i).buttonWidth / 2, active.get(i).buttonY + active.get(i).buttonHeight / 2);
-            g.text(active.get(i).txt, active.get(i).buttonX + active.get(i).buttonWidth / 2, active.get(i).buttonY + active.get(i).buttonHeight / 2);
+            active.get(i).draw(g, p);
         }
-
-}
+    }
+    public void draw(PGraphics g, PApplet p){
+        g.push();
+        buttonHovered = isMouseOverButton(p);
+        if(buttonHovered){
+            g.fill(200);
+        } else{
+            g.fill(150);
+        }
+        g.rect(buttonX, buttonY, buttonWidth, buttonHeight);
+        g.fill(0);
+        g.textAlign(PApplet.CENTER, PApplet.CENTER);
+        //g.text(buttonTxt, buttonX + buttonWidth / 2, buttonY + buttonHeight / 2);
+        g.text(txt, buttonX + buttonWidth / 2, buttonY + buttonHeight / 2);
+        g.pop();
+    }
     public void mousePressed(PApplet p) {
         if (isMouseOverButton(p)) {
             action();

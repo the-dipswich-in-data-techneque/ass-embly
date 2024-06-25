@@ -15,15 +15,19 @@ public class StartButtons extends Button{
         switch (id) {
             case 0:
                 Players.setup(1, 1000);
+                Sketch.setStates(Sketch.State.wheelPick, null);
                 break;
             case 1:
                 Players.setup(2, 1000);
+                Sketch.setStates(Sketch.State.wheelPick, null);
                 break;
             case 2:
                 Players.setup(3, 1000);
+                Sketch.setStates(Sketch.State.wheelPick, null);
                 break;
             case 3:
                 Players.setup(4, 1000);
+                Sketch.setStates(Sketch.State.wheelPick, null);
                 break;
         }
     }
