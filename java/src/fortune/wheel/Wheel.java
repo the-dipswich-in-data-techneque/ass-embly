@@ -86,4 +86,7 @@ public class Wheel {
     this.rotation = rotation;
     while(this.rotation < 0) this.rotation += Math.PI * 2;
   }
+  public int[] getLocation(){
+    return new int[]{x,y,r};
+  }
 }
