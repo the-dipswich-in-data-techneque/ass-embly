@@ -130,7 +130,7 @@ btnLoop     add         r0      r0      x1 ; speeding
             sti         r3      hex
             ld          r2      pbtn
             add         r2      r2      x0
-            brp         btnLoop
+            brz         btnLoop
 noBTN       add         r0      r0      x-1 ; slowing
             add         r1      r1      r0
             brp         x3                  ;modulus operation
@@ -145,6 +145,8 @@ noBTN       add         r0      r0      x-1 ; slowing
             add         r0      r3      x0
             add         r2      r1      r0
             brp         noBTN
+            add         r0      r1      x0
+            jsr         TX
             ld          r7      storeR7 ;sub routine
             ld          r1      storeR1 ;location
             ld          r2      storeR2 ;btn
