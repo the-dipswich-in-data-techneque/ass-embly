@@ -3,12 +3,8 @@ import com.fazecast.jSerialComm.SerialPort;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class UART{
-
-    private Queue<String> messageQueue = new LinkedList<>();
 
     private static SerialPort port;
 
@@ -25,51 +21,6 @@ public class UART{
             }
         }
         port.openPort();
-    }
-
-    public void addToQueue(String message){
-        messageQueue.offer(message);
-    }
-
-    public void UART_sender() {
-        if (port.openPort()) {
-            byte[] writeBuffer;
-            String dataToSend;
-
-            // Send data
-            if(!messageQueue.isEmpty()){
-                dataToSend = messageQueue.poll() + "\n";
-                writeBuffer = dataToSend.getBytes();
-                port.writeBytes(writeBuffer, writeBuffer.length);
-
-            // Read data
-            byte[] readBuffer = new byte[1024];
-            while(port.bytesAvailable() < writeBuffer.length){
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException ignore) {}
-            }
-            int bytesRead = 0;
-            StringBuilder receivedData = new StringBuilder();
-
-            long timeout = System.currentTimeMillis() + 5000; // 5 seconds timeout
-
-            try {
-                while(System.currentTimeMillis() < timeout){
-                    if(port.bytesAvailable() > 0){
-                        bytesRead = port.readBytes(readBuffer, Math.min(port.bytesAvailable(), readBuffer.length));
-                        receivedData.append(new String(readBuffer, 0, bytesRead));
-
-                        // Check if we've received a complete message
-                        if (receivedData.toString().contains("\n")) {
-                            break;
-                        }
-                    }
-                    Thread.sleep(10); // Small delay to prevent busy-waiting
-                }
-            } catch (Exception ignore) {}
-        }
-    }
     }
 
     public static short getShort(boolean locking){
