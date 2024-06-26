@@ -7,6 +7,9 @@ public class Players {
     for (int i = 0; i < money.length; i++) {
       money[i] = startMoney;
     }
+    UART.sendShort((short)amount, true);
+    UART.sendShort((short)-startMoney, true);
+    UART.sendShort((short)0, true);
   }
   static public void addMoney(int player, int amount) {
     money[player] += amount;

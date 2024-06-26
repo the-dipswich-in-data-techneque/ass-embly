@@ -13,7 +13,7 @@ public class UART{
         
         port = ports[0];
         for (int i = 0; i < ports.length; i++) {
-            if(ports[i].getSystemPortName().contains("UART") || ports[i].getSystemPortName().contains("Feather")){
+            if(ports[i].getDescriptivePortName().contains("UART") || ports[i].getDescriptivePortName().contains("Feather")){
                 port = ports[i];
                 break;
             }

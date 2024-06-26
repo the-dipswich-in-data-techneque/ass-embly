@@ -1,0 +1,151 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 24380
+License: Customer
+
+Current time: 	Wed Jun 26 09:38:16 CEST 2024
+Time zone: 	Central European Time (Europe/Paris)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 283 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	Hjalte Muus Bischoff
+User home directory: C:/Users/Hjalte Muus Bischoff
+User working directory: C:/3_ugers_projekt/LC3_Computer
+User country: 	DK
+User language: 	da
+User locale: 	da_DK
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/Hjalte Muus Bischoff/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/Hjalte Muus Bischoff/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/Hjalte Muus Bischoff/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/3_ugers_projekt/LC3_Computer/vivado.log
+Vivado journal file location: 	C:/3_ugers_projekt/LC3_Computer/vivado.jou
+Engine tmp dir: 	C:/3_ugers_projekt/LC3_Computer/.Xil/Vivado-24380-hjalte-x1gen6
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	138 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 540 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\3_ugers_projekt\LC3_Computer\LC3_Computer.xpr. Version: Vivado v2018.2 
+// bx (ck):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/3_ugers_projekt/LC3_Computer/LC3_Computer.xpr 
+// [GUI Memory]: 50 MB (+50423kb) [00:00:07]
+// [Engine Memory]: 510 MB (+382798kb) [00:00:07]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/3_ugers_projekt/LC3_Computer/LC3_Computer.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 57 MB (+4206kb) [00:00:09]
+// [Engine Memory]: 564 MB (+29903kb) [00:00:09]
+// [GUI Memory]: 62 MB (+1999kb) [00:00:11]
+// HMemoryUtils.trashcanNow. Engine heap size: 595 MB. GUI used memory: 40 MB. Current time: 6/26/24 9:38:20 AM CEST
+// Tcl Message: open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 807.293 ; gain = 143.422 
+// [Engine Memory]: 606 MB (+15139kb) [00:00:13]
+// Project name: LC3_Computer; location: C:/3_ugers_projekt/LC3_Computer; part: xc7z010clg400-1
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 16 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd)]", 1); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd)]", 2); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd), Inst_lc3_computer : lc3_computer(Behavioral) (lc3_computer.vhd)]", 3, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd), Inst_lc3_computer : lc3_computer(Behavioral) (lc3_computer.vhd), lc3_m : lc3_wrapper_multiplexers(structural) (lc3_wrapper_multiplexers.vhd)]", 4, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+selectCodeEditor("lc3_computer.vhd", 0, 79); // ce (w, ck)
+// Elapsed time: 20 seconds
+selectCodeEditor("lc3_computer.vhd", 768, 48); // ce (w, ck)
+// [GUI Memory]: 67 MB (+2338kb) [00:01:03]
+selectCodeEditor("lc3_computer.vhd", 0, 79); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 74 MB (+3816kb) [00:01:12]
+// [GUI Memory]: 80 MB (+2572kb) [00:01:12]
+// Elapsed time: 23 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (ck): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (ck)
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cv' command handler elapsed time: 3 seconds
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_MODIFY
+// bx (ck):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Wed Jun 26 09:39:42 2024] Launched synth_1... Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/runme.log [Wed Jun 26 09:39:42 2024] Launched impl_1... Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 621 MB. GUI used memory: 43 MB. Current time: 6/26/24 9:39:44 AM CEST
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 289ms to process. Increasing delay to 2000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 665 MB. GUI used memory: 42 MB. Current time: 6/26/24 9:40:33 AM CEST
+// [Engine Memory]: 665 MB (+29493kb) [00:02:27]
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 408ms to process. Increasing delay to 3000 ms.
+// ah (ck): Bitstream Generation Completed: addNotify
+// Elapsed time: 187 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (ck)
+selectCodeEditor("lc3_computer.vhd", 168, 224); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 151, 244); // ce (w, ck)
+// [GUI Memory]: 85 MB (+957kb) [00:05:55]
