@@ -28,10 +28,10 @@ public class UART{
         long timeout = System.currentTimeMillis() + 100;
         do {
             int bytesRead = port.readBytes(shortBuffer, shortBuffer.length);
-
             if(bytesRead == 2){
                 success = true;
-                return ByteBuffer.wrap(shortBuffer).order(ByteOrder.BIG_ENDIAN).getShort();
+                System.out.println(ByteBuffer.wrap(shortBuffer).order(ByteOrder.LITTLE_ENDIAN).getShort());
+                return ByteBuffer.wrap(shortBuffer).order(ByteOrder.LITTLE_ENDIAN).getShort();
             }
         }while (locking && System.currentTimeMillis() < timeout);
         success = false;
@@ -46,11 +46,11 @@ public class UART{
     while (bytesWritten < 2 && System.currentTimeMillis() < timeout) {
             bytesWritten += port.writeBytes(shorty, shorty.length - bytesWritten, bytesWritten);
         }
-    
+        System.out.println(ByteBuffer.wrap(shorty).order(ByteOrder.LITTLE_ENDIAN).getShort());
         if (bytesWritten == 2) {
             if (locking) {
                 while (System.currentTimeMillis() < timeout) {
-                    port.flushIOBuffers();
+                    //port.flushIOBuffers();
                     if (port.bytesAwaitingWrite() == 0) {
                         success = true;
                         return true;  // All bytes have been transmitted

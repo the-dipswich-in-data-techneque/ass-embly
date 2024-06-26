@@ -2,10 +2,10 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Jun 26 09:38:04 2024
-# Process ID: 24380
+# Start of session at: Wed Jun 26 10:23:39 2024
+# Process ID: 1532
 # Current directory: C:/3_ugers_projekt/LC3_Computer
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8124 C:\3_ugers_projekt\LC3_Computer\LC3_Computer.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17292 C:\3_ugers_projekt\LC3_Computer\LC3_Computer.xpr
 # Log file: C:/3_ugers_projekt/LC3_Computer/vivado.log
 # Journal file: C:/3_ugers_projekt/LC3_Computer\vivado.jou
 #-----------------------------------------------------------
@@ -15,18 +15,10 @@ Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 807.293 ; gain = 143.422
-update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Wed Jun 26 09:39:42 2024] Launched synth_1...
-Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/runme.log
-[Wed Jun 26 09:39:42 2024] Launched impl_1...
-Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
-[Wed Jun 26 10:05:30 2024] Launched synth_1...
-Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/runme.log
-[Wed Jun 26 10:05:30 2024] Launched impl_1...
-Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/impl_1/runme.log
+INFO: [IP_Flow 19-2338] Canceling the changes to the IP catalog. Reverting the catalog back to its previous state.
+INFO: [IP_Flow 19-2340] The IP catalog has been returned to its previous state.
+INFO: [Common 17-344] 'open_project' was cancelled
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 26 10:23:59 2024...
