@@ -190,6 +190,7 @@ RX          st          r1      tempR1
             ld          r0      stdindat
             add         r0      r0      r1  ;full word from transmision
             ld          r1      tempR1
+            sti         r0      hex
             ret
 tempR1      .fill   x0
 tempR2      .fill   x0
@@ -224,6 +225,7 @@ loopRS      and         r1      r0      r2
             ld          r2      tempR2
             ld          r3      tempR3
             ld          r4      tempR4
+            sti         r0      hex
             ret
 ;                                           ;;;;;;;;;;;;;;
 resultStart .fill       xdfff
