@@ -24,3 +24,9 @@ launch_runs impl_1 -to_step write_bitstream -jobs 8
 Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/runme.log
 [Wed Jun 26 09:39:42 2024] Launched impl_1...
 Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Wed Jun 26 10:05:30 2024] Launched synth_1...
+Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/runme.log
+[Wed Jun 26 10:05:30 2024] Launched impl_1...
+Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/impl_1/runme.log

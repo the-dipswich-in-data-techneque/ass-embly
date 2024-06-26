@@ -149,3 +149,116 @@ dismissDialog("Bitstream Generation Completed"); // ah (ck)
 selectCodeEditor("lc3_computer.vhd", 168, 224); // ce (w, ck)
 selectCodeEditor("lc3_computer.vhd", 151, 244); // ce (w, ck)
 // [GUI Memory]: 85 MB (+957kb) [00:05:55]
+// Elapsed time: 280 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 18); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, ZyboVIO.xdc]", 20, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, ZyboVIO.xdc]", 20, false, false, false, false, false, true); // B (D, ck) - Double Click
+// [GUI Memory]: 90 MB (+464kb) [00:10:11]
+// Elapsed time: 34 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// Elapsed time: 233 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ZyboVIO.xdc", 2); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+// Elapsed time: 44 seconds
+selectCodeEditor("lc3_computer.vhd", 304, 274); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 517, 226); // ce (w, ck)
+// Elapsed time: 69 seconds
+selectCodeEditor("lc3_computer.vhd", 460, 65); // ce (w, ck)
+// Elapsed time: 89 seconds
+selectCodeEditor("lc3_computer.vhd", 497, 122); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 497, 122); // ce (w, ck)
+// Elapsed time: 563 seconds
+selectCodeEditor("lc3_computer.vhd", 1, 78); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 19 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (ck): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (ck)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cv' command handler elapsed time: 3 seconds
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (ck)
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// TclEventType: RUN_MODIFY
+// bx (ck):  Generate Bitstream : addNotify
+// Tcl Message: [Wed Jun 26 10:05:30 2024] Launched synth_1... Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/runme.log [Wed Jun 26 10:05:30 2024] Launched impl_1... Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (ck)
+// [GUI Memory]: 96 MB (+1581kb) [00:27:40]
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah (ck): Bitstream Generation Completed: addNotify
+// Elapsed time: 195 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("lc3_computer.vhd", 83, 171); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 96, 167); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 116, 167); // ce (w, ck)
+// Elapsed time: 39 seconds
+selectCodeEditor("lc3_computer.vhd", 296, 99); // ce (w, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd), Inst_lc3_computer : lc3_computer(Behavioral) (lc3_computer.vhd)]", 3, true, false, false, false, true, false); // B (D, ck) - Popup Trigger - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd), Inst_lc3_computer : lc3_computer(Behavioral) (lc3_computer.vhd), lc3_m : lc3_wrapper_multiplexers(structural) (lc3_wrapper_multiplexers.vhd)]", 4); // B (D, ck)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd), Inst_lc3_computer : lc3_computer(Behavioral) (lc3_computer.vhd), lc3_m : lc3_wrapper_multiplexers(structural) (lc3_wrapper_multiplexers.vhd)]", 4); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd), Inst_lc3_computer : lc3_computer(Behavioral) (lc3_computer.vhd), uart_unit : uart(str_arch) (list_ch07_04_uart.vhd)]", 5); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd), Inst_lc3_computer : lc3_computer(Behavioral) (lc3_computer.vhd), uart_unit : uart(str_arch) (list_ch07_04_uart.vhd), baud_gen_unit : mod_m_counter(arch) (list_ch04_11_mod_m.vhd)]", 6, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd), Inst_lc3_computer : lc3_computer(Behavioral) (lc3_computer.vhd), uart_unit : uart(str_arch) (list_ch07_04_uart.vhd), baud_gen_unit : mod_m_counter(arch) (list_ch04_11_mod_m.vhd)]", 6, false, false, false, false, false, true); // B (D, ck) - Double Click
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_student_code : student_code(Behavioral) (student_code.vhd), Inst_lc3_computer : lc3_computer(Behavioral) (lc3_computer.vhd), uart_unit : uart(str_arch) (list_ch07_04_uart.vhd)]", 5); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_ZyboVIOSE_wrapper : zyboviose_wrapper(Behavioral) (zybovios_wrapper.vhd)]", 7); // B (D, ck)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, LC3Zybo_top(Behavioral) (top.vhd), Inst_ZyboVIOSE_wrapper : zyboviose_wrapper(Behavioral) (zybovios_wrapper.vhd)]", 7); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lc3_wrapper_tristates(structural) (lc3_wrapper_tristates.vhd)]", 16); // B (D, ck)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lc3_wrapper_tristates(structural) (lc3_wrapper_tristates.vhd)]", 16); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, ZyboVIO.xdc]", 20, false); // B (D, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ZyboVIO.xdc", 2); // k (j, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 665 MB. GUI used memory: 94 MB. Current time: 6/26/24 10:10:34 AM CEST
+// Elapsed time: 286 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lc3_computer.vhd", 1); // k (j, ck)
+selectCodeEditor("lc3_computer.vhd", 2, 111); // ce (w, ck)
+typeControlKey((HResource) null, "lc3_computer.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 0, 95); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 37 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (ck): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (ck)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cv' command handler elapsed time: 3 seconds
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 8 
+// Tcl Message: [Wed Jun 26 10:16:04 2024] Launched synth_1... Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/synth_1/runme.log [Wed Jun 26 10:16:04 2024] Launched impl_1... Run output will be captured here: C:/3_ugers_projekt/LC3_Computer/LC3_Computer.runs/impl_1/runme.log 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 101 MB (+320kb) [00:40:43]
+// ah (ck): Bitstream Generation Completed: addNotify
+// Elapsed time: 173 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("lc3_computer.vhd", 598, 207); // ce (w, ck)
+selectCodeEditor("lc3_computer.vhd", 531, 227); // ce (w, ck)

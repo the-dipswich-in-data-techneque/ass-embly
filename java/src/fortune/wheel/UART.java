@@ -19,7 +19,7 @@ public class UART{
             }
         }
         port.setComPortParameters(19200, 8, SerialPort.ONE_STOP_BIT, SerialPort.NO_PARITY);
-        port.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 0, 0);
+        port.setComPortTimeouts(SerialPort.TIMEOUT_READ_BLOCKING, 10, 10);
         port.openPort();
     }
 
