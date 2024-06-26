@@ -1,0 +1,23 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	begin             3000
+//	fail              3007
+//	prompt            3024
+//	readS             3034
+//	invalid           304F
+//	valid             3051
+//	loop1             305A
+//	isPrime           305E
+//	loop              3066
+//	next              3069
+//	final             306D
+//	right             306F
+//	wrong             3072
+//	recR1             3076
+//	recR2             3077
+//	resultS           3078
+//	realprime         307F
+//	fakeprime         3094
+

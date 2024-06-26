@@ -1,4 +1,4 @@
-.orig x3000
+.orig x500
 ;                                           ;;;;;;;;;;;;;
 main        jsr         initcoms
             and         r1      r1      x0  ;current player

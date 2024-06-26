@@ -1,0 +1,174 @@
+ Addr: OPCODE   LineNo: Source
+x3000: xe023         3:            begin LEA      r0      prompt
+x3001: xf022         4:                  TRAP     x22
+x3002: x4831         5:                  JSR      readS
+x3003: x485a         6:                  JSR      isPrime
+x3004: x4873         7:                  JSR      resultS
+x3005: x0ffa         8:                  BRnzp    begin
+x3006: xf025         9:                  HALT 
+x3007: x006d        10:             fail .STRINGZ         "must be a two digit integer\n"
+x3008: x0075        10:             fail  
+x3009: x0073        10:             fail  
+x300a: x0074        10:             fail  
+x300b: x0020        10:             fail  
+x300c: x0062        10:             fail  
+x300d: x0065        10:             fail  
+x300e: x0020        10:             fail  
+x300f: x0061        10:             fail  
+x3010: x0020        10:             fail  
+x3011: x0074        10:             fail  
+x3012: x0077        10:             fail  
+x3013: x006f        10:             fail  
+x3014: x0020        10:             fail  
+x3015: x0064        10:             fail  
+x3016: x0069        10:             fail  
+x3017: x0067        10:             fail  
+x3018: x0069        10:             fail  
+x3019: x0074        10:             fail  
+x301a: x0020        10:             fail  
+x301b: x0069        10:             fail  
+x301c: x006e        10:             fail  
+x301d: x0074        10:             fail  
+x301e: x0065        10:             fail  
+x301f: x0067        10:             fail  
+x3020: x0065        10:             fail  
+x3021: x0072        10:             fail  
+x3022: x000a        10:             fail  
+x3023: x0000        10:             fail  
+x3024: x0077        11:           prompt .STRINGZ         "write a number "
+x3025: x0072        11:           prompt  
+x3026: x0069        11:           prompt  
+x3027: x0074        11:           prompt  
+x3028: x0065        11:           prompt  
+x3029: x0020        11:           prompt  
+x302a: x0061        11:           prompt  
+x302b: x0020        11:           prompt  
+x302c: x006e        11:           prompt  
+x302d: x0075        11:           prompt  
+x302e: x006d        11:           prompt  
+x302f: x0062        11:           prompt  
+x3030: x0065        11:           prompt  
+x3031: x0072        11:           prompt  
+x3032: x0020        11:           prompt  
+x3033: x0000        11:           prompt  
+x3034: xf020        13:            readS TRAP     x20
+x3035: x1220        14:                  ADD      r1      r0      x0
+x3036: xf021        15:                  TRAP     x21
+x3037: xf020        16:                  TRAP     x20
+x3038: x1420        17:                  ADD      r2      r0      x0
+x3039: xf021        18:                  TRAP     x21
+x303a: x5020        19:                  AND      r0      r0      x0
+x303b: x102a        20:                  ADD      r0      r0      xa
+x303c: xf021        21:                  TRAP     x21
+x303d: x1070        22:                  ADD      r0      r1      #-16
+x303e: x1030        23:                  ADD      r0      r0      #-16
+x303f: x1030        24:                  ADD      r0      r0      #-16
+x3040: x080e        25:                  BRn      invalid
+x3041: x1070        26:                  ADD      r0      r1      #-16
+x3042: x1030        27:                  ADD      r0      r0      #-16
+x3043: x1030        28:                  ADD      r0      r0      #-16
+x3044: x1037        29:                  ADD      r0      r0      #-9
+x3045: x0209        30:                  BRp      invalid
+x3046: x10b0        31:                  ADD      r0      r2      #-16
+x3047: x1030        32:                  ADD      r0      r0      #-16
+x3048: x1030        33:                  ADD      r0      r0      #-16
+x3049: x0805        34:                  BRn      invalid
+x304a: x10b0        35:                  ADD      r0      r2      #-16
+x304b: x1030        36:                  ADD      r0      r0      #-16
+x304c: x1030        37:                  ADD      r0      r0      #-16
+x304d: x1037        38:                  ADD      r0      r0      #-9
+x304e: x0c02        39:                  BRnz     valid
+x304f: xe1b7        40:          invalid LEA      r0      fail
+x3050: x0faf        41:                  BRnzp    begin
+x3051: x5020        42:            valid AND      r0      r0      x0
+x3052: x14b0        43:                  ADD      r2      r2      #-16
+x3053: x14b0        44:                  ADD      r2      r2      #-16
+x3054: x14b0        45:                  ADD      r2      r2      #-16
+x3055: x1270        46:                  ADD      r1      r1      #-16
+x3056: x1270        47:                  ADD      r1      r1      #-16
+x3057: x1270        48:                  ADD      r1      r1      #-16
+x3058: x56e0        49:                  AND      r3      r3      x0
+x3059: x16f6        50:                  ADD      r3      r3      x-a
+x305a: x1001        51:            loop1 ADD      r0      r0      r1
+x305b: x16e1        52:                  ADD      r3      r3      x1
+x305c: x09fd        53:                  BRn      loop1
+x305d: x1002        54:                  ADD      r0      r0      r2
+x305e: x3217        56:          isPrime ST       r1      recR1
+x305f: x3417        57:                  ST       r2      recR2;store register values
+x3060: x123d        58:                  ADD      r1      r0      x-3
+x3061: x080d        59:                  BRn      right
+x3062: x5260        60:                  AND      r1      r1      x0
+x3063: x127e        61:                  ADD      r1      r1      x-2;prepare multiplicator
+x3064: x54a0        62:                  AND      r2      r2      x0
+x3065: x1480        63:                  ADD      r2      r2      r0
+x3066: x1481        64:             loop ADD      r2      r2      r1;recursive remainder
+x3067: x0405        65:                  BRz      final;remainder negative so if r1 = r0 it is prime otherwise it is not
+x3068: x03fd        66:                  BRp      loop;remainder positive so do it again
+x3069: x127f        67:             next ADD      r1      r1      x-1;prepares the next multiplicator to see
+x306a: x54a0        68:                  AND      r2      r2      x0
+x306b: x1480        69:                  ADD      r2      r2      r0
+x306c: x0ff9        70:                  BRnzp    loop;do it all again
+x306d: x1440        71:            final ADD      r2      r1      r0
+x306e: x0203        72:                  BRp      wrong;skip the one   
+x306f: x5020        73:            right AND      r0      r0      x0
+x3070: x1021        74:                  ADD      r0      r0      x1
+x3071: x0e01        75:                  BRnzp    x1
+x3072: x5020        76:            wrong AND      r0      r0      x0
+x3073: x2202        77:                  LD       r1      recR1
+x3074: x2402        78:                  LD       r2      recR2
+x3075: xc1c0        79:                  RET 
+x3076: x0000        81:            recR1 .FILL    x0
+x3077: x0000        82:            recR2 .FILL    x0
+x3078: x1020        84:          resultS ADD      r0      r0      x0
+x3079: x0401        85:                  BRz      x1
+x307a: xe004        86:                  LEA      r0      realprime
+x307b: x0a01        87:                  BRnp     x1
+x307c: xe017        88:                  LEA      r0      fakeprime
+x307d: xf022        89:                  TRAP     x22
+x307e: xc1c0        90:                  RET 
+x307f: x0054        92:        realprime .STRINGZ     "The number is prime\n"
+x3080: x0068        92:        realprime  
+x3081: x0065        92:        realprime  
+x3082: x0020        92:        realprime  
+x3083: x006e        92:        realprime  
+x3084: x0075        92:        realprime  
+x3085: x006d        92:        realprime  
+x3086: x0062        92:        realprime  
+x3087: x0065        92:        realprime  
+x3088: x0072        92:        realprime  
+x3089: x0020        92:        realprime  
+x308a: x0069        92:        realprime  
+x308b: x0073        92:        realprime  
+x308c: x0020        92:        realprime  
+x308d: x0070        92:        realprime  
+x308e: x0072        92:        realprime  
+x308f: x0069        92:        realprime  
+x3090: x006d        92:        realprime  
+x3091: x0065        92:        realprime  
+x3092: x000a        92:        realprime  
+x3093: x0000        92:        realprime  
+x3094: x0054        93:        fakeprime .STRINGZ     "The number is not prime\n"
+x3095: x0068        93:        fakeprime  
+x3096: x0065        93:        fakeprime  
+x3097: x0020        93:        fakeprime  
+x3098: x006e        93:        fakeprime  
+x3099: x0075        93:        fakeprime  
+x309a: x006d        93:        fakeprime  
+x309b: x0062        93:        fakeprime  
+x309c: x0065        93:        fakeprime  
+x309d: x0072        93:        fakeprime  
+x309e: x0020        93:        fakeprime  
+x309f: x0069        93:        fakeprime  
+x30a0: x0073        93:        fakeprime  
+x30a1: x0020        93:        fakeprime  
+x30a2: x006e        93:        fakeprime  
+x30a3: x006f        93:        fakeprime  
+x30a4: x0074        93:        fakeprime  
+x30a5: x0020        93:        fakeprime  
+x30a6: x0070        93:        fakeprime  
+x30a7: x0072        93:        fakeprime  
+x30a8: x0069        93:        fakeprime  
+x30a9: x006d        93:        fakeprime  
+x30aa: x0065        93:        fakeprime  
+x30ab: x000a        93:        fakeprime  
+x30ac: x0000        93:        fakeprime  
