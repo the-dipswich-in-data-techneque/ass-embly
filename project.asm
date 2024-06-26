@@ -95,8 +95,8 @@ storeR4     .fill       x0000
 storeR5     .fill       x0000
 storeR7     .fill       x0000
 ;                                           ;;;;;;;;;;;;;;
-stdindat    .fill       xfe02
-stdinstat   .fill       xfe00
+stdindat    .fill       xfe03
+stdinstat   .fill       xfe01
 ;                                           ;;;;;;;;;;;;;;
 pbtn        .fill       xFe0F
 hex         .fill       xFE12
@@ -196,8 +196,8 @@ tempR2      .fill   x0
 tempR3      .fill   x0
 tempR4      .fill   x0
 ;                                           ;;;;;;;;;;;;;;
-stdoutdat   .fill       xfe06
-stdoutstat  .fill       xfe04
+stdoutdat   .fill       xfe07
+stdoutstat  .fill       xfe05
 ;                                           ;;;;;;;;;;;;;;
 lowerMask   .fill       xff
 topMask     .fill       x100
